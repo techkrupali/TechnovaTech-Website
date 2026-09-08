@@ -226,6 +226,23 @@ const projects: Project[] = [
     cta: "Visit site",
   },
   {
+    name: "Missoma",
+    image: "/projects/missoma.svg",
+    category: "E-commerce",
+    about:
+      "US storefront for the London demi-fine jewellery brand \u2014 gold, silver and solid-gold pieces with engraving, designer collaborations and a checkout built to convert.",
+    features: [
+      "Rich catalogue & collections",
+      "Free engraving on select pieces",
+      "Designer collaboration drops",
+      "Gift sets & bundle offers",
+      "60-day returns & 2-year warranty",
+      "Fast, conversion-tuned checkout",
+    ],
+    href: "https://us.missoma.com/",
+    cta: "Visit site",
+  },
+  {
     name: "Miller Storm",
     image: "/projects/miller-storm.png",
     category: "Custom Software",
