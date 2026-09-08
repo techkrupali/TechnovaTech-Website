@@ -29,3 +29,4 @@ next-env.d.ts
 
 # claude local session config
 .claude/
+.DS_Store
