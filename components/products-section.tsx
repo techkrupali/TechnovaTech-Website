@@ -43,6 +43,7 @@ const products = [
       "A smart Digital SAT preparation platform — adaptive practice that targets weak areas first, full-length mock tests, and score-trend analytics that show students exactly what is improving before test day.",
     tags: ["Adaptive Practice", "Full-length Mocks", "Score Analytics", "Study Plans"],
     mock: "edu" as const,
+    screenshot: "/products/dsatguru-home.png",
   },
   {
     number: "03",
