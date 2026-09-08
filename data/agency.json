@@ -1,12 +1,6 @@
 {
   "updatedAt": "2026-07-21T15:35:50+05:30",
   "payments": {
-    "international": {
-      "provider": "Wise",
-      "payLink": "https://wise.com/pay/business/voravivekhemantbhai1",
-      "account": "Vora Krupali Hemantbhai",
-      "use": "USD/CAD/GBP/EUR — Western clients; include in invoices/pitch follow-ups"
-    },
     "indiaUPI": {
       "vpa": "9601176051@kotakbank",
       "account": "VORA VIVEK HEMANTBHAI (Kotak811)",
@@ -722,7 +716,7 @@
     {
       "date": "2026-07-20",
       "agent": "ops",
-      "summary": "MIDDAY CONSOLIDATED CYCLE (14:59 IST): Morning+midday crons merged into one decision — NO new leads added this round. Reason: 6 contactable leads already meet the daily quota and ZERO pitches have been sent yet; stacking inventory before the shop opens is waste. Send-first discipline. BOSS ACTION NOW: UK send window is OPEN until 18:30 IST — Approve & Send L-005 (Blades of Norwich) and L-006 (Drive Automatic); both have flagship demo pages ready to impress. Tonight 20:30+ IST: send L-001/L-002/L-003 (North America). Payments fully operational (Wise international link + India UPI). Next scout round runs after today's sends go out."
+      "summary": "MIDDAY CONSOLIDATED CYCLE (14:59 IST): Morning+midday crons merged into one decision — NO new leads added this round. Reason: 6 contactable leads already meet the daily quota and ZERO pitches have been sent yet; stacking inventory before the shop opens is waste. Send-first discipline. BOSS ACTION NOW: UK send window is OPEN until 18:30 IST — Approve & Send L-005 (Blades of Norwich) and L-006 (Drive Automatic); both have flagship demo pages ready to impress. Tonight 20:30+ IST: send L-001/L-002/L-003 (North America). Payments fully operational (India UPI). Next scout round runs after today's sends go out."
     },
     {
       "date": "2026-07-20",
@@ -751,10 +745,6 @@
     },
     {
       "item": "India payments — UPI 9601176051@kotakbank (Kotak811)",
-      "status": "received"
-    },
-    {
-      "item": "International payments — Wise link (wise.com/pay/business/voravivekhemantbhai1)",
       "status": "received"
     },
     {
