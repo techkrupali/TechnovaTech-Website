@@ -51,14 +51,17 @@ const values = [
   },
 ]
 
+/* 2020 → 2027: six years shipped, the current chapter, and the one ahead. */
 const milestones = [
-  { year: "2019", title: "Founded", description: "Technova Tech was born with a mission to democratize technology" },
-  { year: "2020", title: "First Product", description: "Launched Retailians POS, our flagship product" },
-  { year: "2021", title: "Team Growth", description: "Expanded to a team of 10+ talented professionals" },
-  { year: "2022", title: "Enterprise", description: "Released 911 Wrap ERP for enterprise clients" },
-  { year: "2023", title: "AI Integration", description: "Integrated AI capabilities across all products" },
-  { year: "2024", title: "Expansion", description: "Serving clients across multiple industries and regions" },
-]
+  { year: "2020", title: "First Product", description: "Retailians POS launched — our flagship retail platform.", status: "done" },
+  { year: "2021", title: "Team Growth", description: "Expanded to a team of 10+ specialists.", status: "done" },
+  { year: "2022", title: "Enterprise", description: "911 Wrap ERP released for automotive businesses.", status: "done" },
+  { year: "2023", title: "AI Integration", description: "AI capabilities built into both products.", status: "done" },
+  { year: "2024", title: "Expansion", description: "Clients across multiple industries and regions.", status: "done" },
+  { year: "2025", title: "Global Reach", description: "International clients across the US, UK, Canada and Australia.", status: "done" },
+  { year: "2026", title: "Technova Era", description: "Full rebrand to Technova Tech — new identity, same team.", status: "now" },
+  { year: "2027", title: "What's Next", description: "An AI-first product suite and a 25+ strong team.", status: "next" },
+] as const
 
 export default function AboutPageContent() {
   const reduceMotion = useReducedMotion()
@@ -70,13 +73,6 @@ export default function AboutPageContent() {
 
   const mvRef = useRef<HTMLElement>(null)
   const mvOrbY = useParallax(mvRef as RefObject<HTMLElement>, { to: -90 })
-
-  const timelineRef = useRef<HTMLDivElement>(null)
-  const timelineFillY = useParallax(timelineRef as RefObject<HTMLElement>, {
-    from: 0,
-    to: 1,
-    offset: ["start center", "end center"],
-  })
 
   return (
     <>
@@ -350,74 +346,81 @@ export default function AboutPageContent() {
       {/* Running Strip - Reverse */}
       <RunningStrip text="INNOVATION • TECHNOLOGY • EXCELLENCE" reverse speed={20} dark />
 
-      {/* Timeline Section */}
+      {/* Timeline Section — a compact ruled grid: eight years, two rows, no scroll marathon */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          <div className="mb-16">
-            <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground block">
-              Our Journey
-            </Reveal>
-            <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">Milestones</h2>
-          </div>
-
-          <div ref={timelineRef} className="relative max-w-4xl mx-auto">
-            {/* Timeline line — base track */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
-            {/* Timeline line — scroll-scrubbed lime fill (scaleY, transform-only, origin top) */}
-            <motion.div
-              aria-hidden
-              className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-1/2 origin-top"
-              style={{
-                scaleY: reduceMotion ? 1 : timelineFillY,
-                background: `linear-gradient(to bottom, ${ACCENT}, transparent)`,
-              }}
-            />
-
-            <div className="space-y-16">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: DUR.base, ease: EASE_OUT }}
-                  className={`relative flex items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                >
-                  <div
-                    className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}
-                  >
-                    <SpotlightCard
-                      tone="light"
-                      className="inline-block p-6 rounded-2xl bg-card border border-border hover:border-foreground/20"
-                    >
-                      <span className="text-4xl font-serif text-foreground">{milestone.year}</span>
-                      <h3 className="text-xl font-medium mt-2 text-foreground">{milestone.title}</h3>
-                      <p className="text-muted-foreground mt-2">{milestone.description}</p>
-                    </SpotlightCard>
-                  </div>
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ type: "spring", stiffness: 400, damping: 20, delay: 0.1 }}
-                    whileHover={reduceMotion ? undefined : { scale: 1.5 }}
-                    className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-foreground dark:bg-card md:-translate-x-1/2 border-4 border-background"
-                  >
-                    {!reduceMotion && (
-                      <motion.span
-                        aria-hidden
-                        className="absolute inset-0 rounded-full"
-                        style={{ background: ACCENT }}
-                        animate={{ scale: [1, 2.4, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2.4, repeat: Number.POSITIVE_INFINITY, ease: "easeOut" }}
-                      />
-                    )}
-                  </motion.div>
-                  <div className="flex-1 hidden md:block" />
-                </motion.div>
-              ))}
+          <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground block">
+                Our Journey
+              </Reveal>
+              <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">Milestones</h2>
             </div>
+            <Reveal y={16} delay={0.2} className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Founded in 2019 — here is what happened next, and where we're headed.
+            </Reveal>
           </div>
+
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
+            {milestones.map((milestone) => {
+              const now = milestone.status === "now"
+              const next = milestone.status === "next"
+              return (
+                <StaggerItem key={milestone.year}>
+                  <div className="group relative border-t border-border pt-6">
+                    {/* marker on the rule */}
+                    <span
+                      aria-hidden
+                      className={`absolute -top-[5px] left-0 h-2.5 w-2.5 rounded-full ${
+                        next ? "border border-muted-foreground bg-background" : ""
+                      }`}
+                      style={next ? undefined : { backgroundColor: now ? ACCENT : "var(--foreground)" }}
+                    >
+                      {now && !reduceMotion && (
+                        <motion.span
+                          aria-hidden
+                          className="absolute inset-0 rounded-full"
+                          style={{ background: ACCENT }}
+                          animate={{ scale: [1, 2.6, 1], opacity: [0.5, 0, 0.5] }}
+                          transition={{ duration: 2.4, repeat: Number.POSITIVE_INFINITY, ease: "easeOut" }}
+                        />
+                      )}
+                    </span>
+
+                    <div className="flex items-baseline gap-3">
+                      <span
+                        className={`font-serif text-3xl md:text-4xl leading-none ${
+                          next ? "text-muted-foreground" : "text-foreground"
+                        }`}
+                      >
+                        {milestone.year}
+                      </span>
+                      {now && (
+                        <span
+                          className="rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white"
+                          style={{ backgroundColor: ACCENT }}
+                        >
+                          Now
+                        </span>
+                      )}
+                      {next && (
+                        <span className="rounded-full border border-border px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+                          Ahead
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground transition-colors duration-300 group-hover:text-[#ef0b0a]">
+                      {milestone.title}
+                    </h3>
+                    <p className={`mt-2 text-sm leading-relaxed ${next ? "text-muted-foreground/70" : "text-muted-foreground"}`}>
+                      {milestone.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              )
+            })}
+          </Stagger>
         </div>
       </section>
 
