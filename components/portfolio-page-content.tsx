@@ -855,9 +855,18 @@ export default function PortfolioPageContent() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="h-px w-8 bg-border" aria-hidden />
-                    <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                      {project.category}
-                    </span>
+                    {project.category === "UI/UX Design" ? (
+                      <span
+                        className="ml-auto rounded-full px-3 py-1 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white"
+                        style={{ backgroundColor: ACCENT }}
+                      >
+                        {project.category}
+                      </span>
+                    ) : (
+                      <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                        {project.category}
+                      </span>
+                    )}
                   </div>
 
                   <div className="mt-6 flex items-center gap-4">
