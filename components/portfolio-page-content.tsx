@@ -208,6 +208,21 @@ const projects: Project[] = [
     cta: "Visit site",
   },
   {
+    name: "Miller Storm",
+    image: "/projects/miller-storm.png",
+    category: "Custom Software",
+    about:
+      "Complete digital build for a Dallas\u2013Fort Worth roofing and restoration company \u2014 we built their website, their mobile app, and personalised software that runs inspections, jobs and insurance-claim workflows.",
+    features: [
+      "Marketing website with booking",
+      "Mobile app for field crews",
+      "Custom jobs & claims software",
+      "Financing & reviews integrations",
+    ],
+    href: "https://millerstorm.com/",
+    cta: "Visit site",
+  },
+  {
     name: "Healthengine",
     image: "/projects/healthengine.png",
     category: "Health & Fitness",
@@ -303,6 +318,7 @@ const projectCategories = [
   "All",
   "SaaS & ERP",
   "E-commerce",
+  "Custom Software",
   "Education",
   "Health & Fitness",
   "Productivity",
