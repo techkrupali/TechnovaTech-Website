@@ -18,7 +18,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-import { RunningStrip, LargeTextMarquee } from "./marquee-section"
+import { LargeTextMarquee } from "./marquee-section"
 import {
   ACCENT,
   DUR,
@@ -312,9 +312,6 @@ export default function ServicesPageContent() {
           </Stagger>
         </div>
       </section>
-
-      {/* Running Strip - Dark */}
-      <RunningStrip text="TECHNOVA TECH • EXCELLENCE • INNOVATION" reverse speed={20} dark />
 
       {/* CTA Section */}
       <section className="py-24 bg-background">
