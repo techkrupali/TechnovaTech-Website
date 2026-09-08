@@ -7,6 +7,7 @@ import { useRef, useState, type RefObject } from "react"
 import { RunningStrip, LargeTextMarquee } from "./marquee-section"
 import {
   ACCENT,
+  AnimatedDivider,
   DUR,
   EASE_OUT,
   SPRING_POP,
@@ -486,71 +487,106 @@ export default function PortfolioPageContent() {
   const heroRef = useRef<HTMLElement>(null)
   const heroOrbY = useParallax(heroRef as RefObject<HTMLElement>, { to: -120 })
 
-  const manifestRows = [
-    { label: "Kept by", value: "Technova Tech" },
-    { label: "Offices", value: "Rajkot · Ahmedabad · Kelowna" },
-    { label: "Entries to date", value: pad3(entries.length) },
-  ]
-
-  const totals = [
-    { label: "Projects delivered", value: 104, suffix: "+" },
-    { label: "Team members", value: 14, suffix: "+" },
-    { label: "Years shipping", value: 5, suffix: "+" },
-    { label: "Client satisfaction", value: 100, suffix: "%" },
-  ]
-
   return (
     <>
-      {/* ---------- manifest hero ---------- */}
-      <section ref={heroRef} className="pt-32 pb-20 relative overflow-hidden bg-background">
+      {/* ---------- hero: editorial statement + archive ledger ---------- */}
+      <section ref={heroRef} className="pt-36 pb-24 relative overflow-hidden bg-background">
         <div aria-hidden className="grid-texture-dark absolute inset-0 opacity-[0.5] pointer-events-none" />
         <GlowOrb color={ACCENT} size={520} opacity={0.12} parallax={heroOrbY} className="-top-40 -left-32" />
-        <span
+
+        {/* ghost watermark — same vocabulary as the other page heroes */}
+        <motion.span
           aria-hidden
-          className="text-stroke-accent pointer-events-none select-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-serif text-[18vw] leading-none font-bold text-transparent opacity-40"
+          style={reduce ? undefined : { y: heroOrbY }}
+          className="text-stroke-accent pointer-events-none select-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-serif text-[18vw] leading-none font-bold text-transparent opacity-30"
         >
           SHIPPED
-        </span>
+        </motion.span>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <Reveal y={14} className="flex items-center gap-2.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse-glow" style={{ backgroundColor: ACCENT }} />
-              <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Shipping manifest — Technova Tech archive
-              </span>
-            </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+            {/* ---------- statement ---------- */}
+            <div className="lg:col-span-8">
+              <Reveal y={12} className="flex items-center gap-4">
+                <span className="h-px w-10" style={{ backgroundColor: ACCENT }} aria-hidden />
+                <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                  Our Portfolio
+                </span>
+              </Reveal>
 
-            <h1 className="font-serif font-normal text-4xl md:text-6xl lg:text-7xl text-foreground mb-10">
-              <RevealText as="span" by="word" text="The work that" delay={0.05} className="inline" />{" "}
-              <GradientText animate as="span" className="italic">
-                shipped.
-              </GradientText>
-            </h1>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+                <RevealText as="span" by="word" text="The work that" delay={0.05} className="inline" />{" "}
+                <GradientText animate as="span" className="italic">
+                  shipped
+                </GradientText>
+                <motion.span
+                  aria-hidden
+                  className="ml-3 inline-block h-3 w-3 md:h-4 md:w-4 rounded-full align-baseline"
+                  style={{ backgroundColor: ACCENT }}
+                  initial={reduce ? false : { scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 18, delay: 0.7 }}
+                />
+              </h1>
 
-            {/* manifest header — ruled rows */}
-            <Stagger className="max-w-xl">
-              {manifestRows.map((row) => (
-                <StaggerItem
-                  key={row.label}
-                  y={10}
-                  className="flex items-baseline justify-between gap-4 py-3 border-b border-border"
+              <AnimatedDivider className="text-foreground max-w-[8rem] mb-8" />
+
+              <Reveal as="p" y={16} delay={0.3} className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                Products, platforms, apps and storefronts — built by one accountable team
+                and running in production for clients across India, Bangladesh, Australia
+                and beyond. No mockups here: everything below is live.
+              </Reveal>
+
+              <Reveal y={16} delay={0.45} className="mt-10 flex flex-wrap items-center gap-6">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
                 >
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {row.label}
+                  <span className="border-b border-foreground/30 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                    Start your own entry
                   </span>
-                  <span className="font-serif text-lg text-foreground text-right">{row.value}</span>
+                  <ArrowUpRight
+                    className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    style={{ color: ACCENT }}
+                  />
+                </Link>
+                <Link
+                  href="/services"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                >
+                  <span className="border-b border-foreground/30 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                    What we build
+                  </span>
+                  <ArrowUpRight
+                    className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    style={{ color: ACCENT }}
+                  />
+                </Link>
+              </Reveal>
+            </div>
+
+            {/* ---------- archive ledger ---------- */}
+            <Stagger className="lg:col-span-4 lg:pt-10">
+              {[
+                { label: "Delivered", value: "104+ projects" },
+                { label: "In the index", value: `${projects.length} highlights` },
+                { label: "Offices", value: "India · Canada" },
+                { label: "Satisfaction", value: "100% referenceable" },
+              ].map((fact, i) => (
+                <StaggerItem key={fact.label}>
+                  <div className="flex items-baseline gap-5 border-t border-border py-5 last:border-b">
+                    <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground w-24 shrink-0">
+                      {fact.label}
+                    </span>
+                    <span className="ml-auto font-serif text-xl md:text-2xl text-foreground text-right">
+                      {fact.value}
+                    </span>
+                  </div>
                 </StaggerItem>
               ))}
-              <StaggerItem
-                y={10}
-                className="flex items-baseline justify-between gap-4 py-3 border-b border-border"
-              >
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Projects delivered
-                </span>
-                <CountUp value={104} suffix="+" className="font-serif text-lg text-foreground" />
-              </StaggerItem>
             </Stagger>
           </div>
         </div>
