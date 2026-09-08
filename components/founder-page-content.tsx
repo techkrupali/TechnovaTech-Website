@@ -352,8 +352,8 @@ export default function FounderPageContent() {
       </section>
 
 
-      {/* Skills Cloud */}
-      <section className="py-24 relative bg-background">
+      {/* Skills Cloud — pulled close under the expertise grid */}
+      <section className="pt-6 pb-24 relative bg-background">
         <div className="container mx-auto px-6">
           <Reveal className="text-center mb-12">
             <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Technical Skills</span>
