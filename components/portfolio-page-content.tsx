@@ -113,6 +113,8 @@ type Project = {
   features: string[]
   href: string
   cta: string
+  /** square logo/icon in public/projects; cards fall back to an initials tile */
+  image?: string
 }
 
 const projects: Project[] = [
@@ -145,6 +147,7 @@ const projects: Project[] = [
   },
   {
     name: "Accessorize London",
+    image: "/projects/accessorize-london.png",
     category: "E-commerce",
     about:
       "Online fashion-accessories store for women and kids — bags, jewellery and hair accessories across gold-plated and sterling-silver lines.",
@@ -154,6 +157,7 @@ const projects: Project[] = [
   },
   {
     name: "Get The Juice",
+    image: "/projects/get-the-juice.png",
     category: "E-commerce",
     about:
       "Storefront for a handcrafted leather, silver and gold jewellery brand from Dhaka — with personalised pieces and gift collections.",
@@ -172,6 +176,7 @@ const projects: Project[] = [
   },
   {
     name: "Healthengine",
+    image: "/projects/healthengine.png",
     category: "Health & Fitness",
     about:
       "Healthcare appointment-booking app — patients find nearby practitioners, book visits and manage their health details in one place.",
@@ -181,6 +186,7 @@ const projects: Project[] = [
   },
   {
     name: "Daily Yoga",
+    image: "/projects/daily-yoga.jpg",
     category: "Health & Fitness",
     about:
       "Yoga and wellness platform with 2,000+ guided sessions — classic yoga to pilates — plus a smart coach that builds personal 28-day plans.",
@@ -190,6 +196,7 @@ const projects: Project[] = [
   },
   {
     name: "Planner Pro",
+    image: "/projects/planner-pro.png",
     category: "Productivity",
     about:
       "All-in-one daily planner — calendar, tasks and notes unified so the whole day lives on one screen.",
@@ -199,6 +206,7 @@ const projects: Project[] = [
   },
   {
     name: "Cat Runner: Decorate Home",
+    image: "/projects/cat-runner.png",
     category: "Kids Games",
     about:
       "Casual endless-runner for kids — dash through colourful worlds, collect coins and decorate the cat's home level by level.",
@@ -208,6 +216,7 @@ const projects: Project[] = [
   },
   {
     name: "CSL Dating",
+    image: "/projects/csl-dating.png",
     category: "Social",
     about:
       "Location-based social dating app for a global audience — profile discovery, matching and real-time chat.",
@@ -217,6 +226,7 @@ const projects: Project[] = [
   },
   {
     name: "Superflow — AI Voice to Text",
+    image: "/projects/superflow.png",
     category: "AI Tools",
     about:
       "AI voice-to-text app — speak naturally and get clean, formatted text anywhere on your phone.",
@@ -612,9 +622,27 @@ export default function PortfolioPageContent() {
                     </span>
                   </div>
 
-                  <h3 className="mt-6 font-serif text-xl md:text-2xl text-foreground">
-                    {project.name}
-                  </h3>
+                  <div className="mt-6 flex items-center gap-4">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt=""
+                        aria-hidden
+                        className="h-12 w-12 shrink-0 rounded-xl border border-border bg-white object-contain p-0.5"
+                      />
+                    ) : (
+                      <span
+                        aria-hidden
+                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-serif text-lg text-white"
+                        style={{ backgroundColor: "#0a0a0f" }}
+                      >
+                        <span style={{ color: ACCENT }}>{project.name.charAt(0)}</span>
+                      </span>
+                    )}
+                    <h3 className="font-serif text-xl md:text-2xl text-foreground">
+                      {project.name}
+                    </h3>
+                  </div>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {project.about}
                   </p>
