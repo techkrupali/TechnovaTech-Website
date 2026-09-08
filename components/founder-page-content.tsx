@@ -272,7 +272,7 @@ export default function FounderPageContent() {
       <LargeTextMarquee text="INNOVATION • EXCELLENCE • GROWTH" speed={35} />
 
       {/* Expertise Section */}
-      <section ref={expertiseRef} className="py-24 relative overflow-hidden bg-background">
+      <section ref={expertiseRef} className="pt-24 pb-8 relative overflow-hidden bg-background">
         <GlowOrb color={ACCENT} size={460} opacity={0.1} parallax={expertiseBgY} className="top-24 -right-32" />
         <AmbientShape
           variant="blob"
@@ -353,7 +353,7 @@ export default function FounderPageContent() {
 
 
       {/* Skills Cloud — pulled close under the expertise grid */}
-      <section className="pt-6 pb-24 relative bg-background">
+      <section className="pt-0 pb-24 relative bg-background">
         <div className="container mx-auto px-6">
           <Reveal className="text-center mb-12">
             <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Technical Skills</span>
