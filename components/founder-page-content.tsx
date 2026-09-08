@@ -219,12 +219,33 @@ export default function FounderPageContent() {
                 </motion.div>
                 <h2 className="text-2xl font-serif text-foreground">About Me</h2>
               </div>
-              <p className="relative z-10 text-lg text-muted-foreground leading-relaxed">
-                {`I'm Krupali Vekariya, a Full-Stack Developer and Founder of Technova Tech. I specialise in smart,
-                scalable digital solutions — custom apps, high-performance systems, and modern technology workflows
-                that transform how businesses operate. With a deep focus on quality, automation, and user-centric
-                design, I turn ideas into products that drive real growth.`}
-              </p>
+              <div className="relative z-10 space-y-5 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  {`I'm Krupali Vekariya, a Full-Stack Developer and the Founder of Technova Tech.
+                  Since 2019 I've been building smart, scalable digital solutions from Gujarat for
+                  clients around the world — custom apps, high-performance systems and modern
+                  technology workflows that change how businesses operate day to day.`}
+                </p>
+                <p>
+                  {`That work has grown into products of our own — `}
+                  <span className="text-foreground font-medium">Retailians POS</span>
+                  {` running daily in thousands of Indian retail stores, `}
+                  <span className="text-foreground font-medium">911 Wrap ERP</span>
+                  {` powering automotive businesses, `}
+                  <span className="text-foreground font-medium">DSAT Guru</span>
+                  {` helping students prep smarter — alongside websites, mobile apps and platforms
+                  shipped for clients across India, Bangladesh, the US and Australia.`}
+                </p>
+                <p>
+                  {`My focus never changes: quality you can measure, automation that removes
+                  busywork, and user-centric design people actually enjoy using. I stay hands-on
+                  with every project — from the first architecture sketch to the release your
+                  customers touch.`}
+                </p>
+                <p className="border-l-2 pl-5 font-serif text-xl italic text-foreground" style={{ borderColor: ACCENT }}>
+                  Ideas only matter once they ship — and shipping is what we do.
+                </p>
+              </div>
             </SpotlightCard>
           </Reveal>
         </div>
