@@ -14,7 +14,6 @@ import {
   Globe,
   Headphones,
   Settings,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
@@ -231,37 +230,103 @@ export default function ServicesPageContent() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid — a framed hairline index: eleven disciplines + one invitation */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <StaggerItem key={service.title}>
-                <SpotlightCard
-                  tone="light"
-                  accent={ACCENT}
-                  className="group/card h-full p-8 rounded-2xl bg-card border border-border"
-                >
-                  <motion.div
-                    whileHover={reduce ? undefined : { rotate: 360, scale: 1.1 }}
-                    transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                    className="relative z-10 w-14 h-14 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mb-6"
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-border bg-border">
+            {services.map((service, i) => (
+              <StaggerItem key={service.title} className="bg-background">
+                <div className="group relative h-full overflow-hidden bg-background p-8 lg:p-10 transition-colors duration-500 hover:bg-secondary/40">
+                  {/* ghost numeral */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-5 right-3 select-none font-serif text-[6.5rem] leading-none text-foreground/[0.04] transition-colors duration-500 group-hover:text-foreground/[0.07]"
                   >
-                    <service.icon className="w-7 h-7 text-background dark:text-foreground" />
-                  </motion.div>
-                  <h3 className="relative z-10 text-xl font-medium mb-3 text-foreground">{service.title}</h3>
-                  <p className="relative z-10 text-muted-foreground mb-6 text-sm">{service.description}</p>
-                  <ul className="relative z-10 space-y-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="relative flex items-center gap-4">
+                    <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-8 bg-border" aria-hidden />
+                    <service.icon
+                      className="ml-auto h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-[#ef0b0a]"
+                      aria-hidden
+                    />
+                  </div>
+
+                  <h3 className="relative mt-7 font-serif text-xl md:text-2xl text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {service.description}
+                  </p>
+
+                  <ul className="relative mt-6 space-y-2.5">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-foreground shrink-0" />
+                      <li key={feature} className="flex items-center gap-3 text-sm text-muted-foreground">
+                        <span
+                          aria-hidden
+                          className="h-1 w-1 shrink-0 rotate-45 transition-colors duration-300 group-hover:bg-[#ef0b0a] bg-foreground/40"
+                        />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                </SpotlightCard>
+
+                  {/* red sweep — draws along the bottom edge on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                    style={{ backgroundColor: ACCENT }}
+                  />
+                </div>
               </StaggerItem>
             ))}
+
+            {/* twelfth cell — the invitation that completes the grid */}
+            <StaggerItem className="bg-background">
+              <Link
+                href="/contact"
+                className="group relative flex h-full flex-col justify-between overflow-hidden p-8 lg:p-10 dark-section"
+              >
+                <div aria-hidden className="grid-texture absolute inset-0 pointer-events-none" />
+                <div
+                  aria-hidden
+                  className="absolute -bottom-20 -right-16 h-56 w-56 rounded-full blur-3xl transition-opacity duration-500 opacity-20 group-hover:opacity-35"
+                  style={{ backgroundColor: ACCENT }}
+                />
+
+                <div className="relative flex items-center gap-4">
+                  <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                    12
+                  </span>
+                  <span className="h-px w-8 bg-white/20" aria-hidden />
+                </div>
+
+                <div className="relative mt-10">
+                  <h3 className="font-serif text-2xl md:text-3xl text-white">
+                    Something else
+                    <br />
+                    in <span className="italic" style={{ color: ACCENT }}>mind?</span>
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60 max-w-xs">
+                    If it runs on software, we can probably build it. Tell us what you're
+                    trying to do — we'll tell you honestly how we'd approach it.
+                  </p>
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white">
+                    <span className="border-b border-white/30 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                      Start a conversation
+                    </span>
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      style={{ color: ACCENT }}
+                    />
+                  </span>
+                </div>
+              </Link>
+            </StaggerItem>
           </Stagger>
         </div>
       </section>
