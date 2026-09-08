@@ -451,8 +451,8 @@ export default function FounderPageContent() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-background">
+      {/* CTA Section — pulled close under the achievement spread */}
+      <section className="pt-6 pb-24 bg-background">
         <div className="container mx-auto px-6">
           <Reveal>
             <div className="text-center p-16 rounded-3xl bg-foreground dark:bg-card relative overflow-hidden">
