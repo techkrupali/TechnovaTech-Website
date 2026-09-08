@@ -650,10 +650,10 @@ export default function PortfolioPageContent() {
             {/* ---------- archive ledger ---------- */}
             <Stagger className="lg:col-span-4 lg:pt-10">
               {[
-                { label: "Delivered", value: "104+ projects" },
+                { label: "Delivered", value: "50+ projects" },
                 { label: "In the index", value: `${projects.length} highlights` },
                 { label: "Offices", value: "India · Canada" },
-                { label: "Satisfaction", value: "100% referenceable" },
+                { label: "Satisfaction", value: "98%" },
               ].map((fact, i) => (
                 <StaggerItem key={fact.label}>
                   <div className="flex items-baseline gap-5 border-t border-border py-5 last:border-b">
