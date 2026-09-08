@@ -198,6 +198,7 @@ const projects: Project[] = [
   },
   {
     name: "Crown BD",
+    image: "/projects/crown-bd.jpg",
     category: "E-commerce",
     about:
       "Digital storefront for Crown, Bangladesh — the full catalogue online with clean navigation, quick ordering and a fast experience on any connection.",
