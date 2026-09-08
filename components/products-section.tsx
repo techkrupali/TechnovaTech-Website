@@ -241,7 +241,7 @@ export default function ProductsSection() {
   const watermarkY = useParallax(parallaxRef, { from: 40, to: -40 })
 
   return (
-    <section ref={sectionRef} className="py-32 dark-section relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 md:py-32 dark-section relative overflow-hidden">
       {/* faint architectural grid (dark-section variant) */}
       <div aria-hidden className="grid-texture absolute inset-0 pointer-events-none" />
 

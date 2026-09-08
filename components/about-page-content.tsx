@@ -83,7 +83,7 @@ export default function AboutPageContent() {
   return (
     <>
       {/* Hero Section — editorial statement + fact ledger */}
-      <section ref={heroRef} className="pt-36 pb-24 relative overflow-hidden bg-background">
+      <section ref={heroRef} className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-background">
         {/* Decorative layers (pointer-events-none, behind z-10 content) */}
         <div className="grid-texture-dark absolute inset-0 pointer-events-none" aria-hidden />
         <GlowOrb color={ACCENT} size={520} opacity={0.14} parallax={heroOrbY} className="-top-32 -left-24" />
@@ -116,7 +116,7 @@ export default function AboutPageContent() {
                 </span>
               </Reveal>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
                 <RevealText as="span" by="word" text="Building the" className="inline" />{" "}
                 <GradientText tone="light" animate className="italic">
                   Future
@@ -289,7 +289,7 @@ export default function AboutPageContent() {
       <LargeTextMarquee text="TECHNOVA TECH • SINCE 2019" speed={30} />
 
       {/* Values Section — a framed quadrant: four principles behind hairline rules */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -353,7 +353,7 @@ export default function AboutPageContent() {
       <RunningStrip text="INNOVATION • TECHNOLOGY • EXCELLENCE" reverse speed={20} dark />
 
       {/* Timeline Section — the classic center-line timeline, 2020 → 2027 */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="mb-16">
             <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground block">
@@ -465,7 +465,7 @@ export default function AboutPageContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

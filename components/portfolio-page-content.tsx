@@ -687,7 +687,7 @@ export default function PortfolioPageContent() {
   return (
     <>
       {/* ---------- hero: editorial statement + archive ledger ---------- */}
-      <section ref={heroRef} className="pt-36 pb-24 relative overflow-hidden bg-background">
+      <section ref={heroRef} className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-background">
         <div aria-hidden className="grid-texture-dark absolute inset-0 opacity-[0.5] pointer-events-none" />
         <GlowOrb color={ACCENT} size={520} opacity={0.12} parallax={heroOrbY} className="-top-40 -left-32" />
 
@@ -711,7 +711,7 @@ export default function PortfolioPageContent() {
                 </span>
               </Reveal>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
                 <RevealText as="span" by="word" text="The work that" delay={0.05} className="inline" />{" "}
                 <GradientText animate as="span" className="italic">
                   shipped
@@ -790,7 +790,7 @@ export default function PortfolioPageContent() {
       </section>
 
       {/* ---------- selected projects: the filterable index ---------- */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -947,7 +947,7 @@ export default function PortfolioPageContent() {
       <RunningStrip text="TECHNOVA TECH • PROOF OF WORK" reverse speed={20} dark />
 
       {/* ---------- the open slot: centered light CTA ---------- */}
-      <section id="next-entry" className="py-28 bg-background relative overflow-hidden scroll-mt-24">
+      <section id="next-entry" className="py-20 md:py-28 bg-background relative overflow-hidden scroll-mt-24">
         <div aria-hidden className="grid-texture-dark absolute inset-0 opacity-[0.5] pointer-events-none" />
         <GlowOrb color={ACCENT} size={520} opacity={0.1} className="-bottom-40 -left-24" />
 

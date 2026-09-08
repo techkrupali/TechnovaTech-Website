@@ -311,7 +311,7 @@ export default function Navigation() {
                   <p className="text-sm text-background/40 mb-2">Get in touch</p>
                   <a
                     href="mailto:hello.technovatechnologies@gmail.com"
-                    className="text-background/80 dark:text-foreground/80 hover:text-background transition-colors text-lg"
+                    className="text-background/80 dark:text-foreground/80 hover:text-background transition-colors text-base sm:text-lg break-all"
                   >
                     hello.technovatechnologies@gmail.com
                   </a>

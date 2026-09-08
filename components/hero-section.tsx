@@ -117,7 +117,7 @@ export default function HeroSection() {
           </Reveal>
 
           {/* headline */}
-          <h1 className="font-serif font-normal text-5xl md:text-7xl lg:text-8xl leading-[1.05] mt-8 mb-8 text-foreground">
+          <h1 className="font-serif font-normal text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] mt-8 mb-8 text-foreground">
             <RevealText as="span" by="word" text="We build digital" delay={0.1} className="block" />
             <span className="block">
               <RevealText as="span" by="word" text="products that" delay={0.25} className="inline" />{" "}

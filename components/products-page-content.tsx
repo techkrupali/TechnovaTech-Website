@@ -223,7 +223,7 @@ export default function ProductsPageContent() {
       <LargeTextMarquee text="ENTERPRISE GRADE • SCALABLE • SECURE" speed={35} />
 
       {/* Why Choose Section */}
-      <section ref={statsRef} className="py-24 bg-background relative overflow-hidden">
+      <section ref={statsRef} className="py-16 md:py-24 bg-background relative overflow-hidden">
         <GlowOrb color={ACCENT} size={460} opacity={0.1} parallax={statsOrbY} className="top-1/3 -right-24" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -265,7 +265,7 @@ export default function ProductsPageContent() {
       <RunningStrip text="TECHNOVA TECH • YOUR TECHNOLOGY PARTNER" reverse speed={20} dark />
 
       {/* CTA Section */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <Reveal y={0} duration={DUR.slow}>
             <motion.div

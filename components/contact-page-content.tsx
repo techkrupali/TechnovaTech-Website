@@ -145,7 +145,7 @@ export default function ContactPageContent() {
   return (
     <>
       {/* ---------- hero: editorial statement + contact ledger ---------- */}
-      <section ref={heroRef} className="pt-36 pb-20 relative overflow-hidden bg-background">
+      <section ref={heroRef} className="pt-28 pb-14 md:pt-36 md:pb-20 relative overflow-hidden bg-background">
         {/* decorative layers — pointer-events-none, behind content */}
         <div aria-hidden className="absolute inset-0 grid-texture-dark pointer-events-none" />
         <GlowOrb color={ACCENT} size={520} opacity={0.14} parallax={heroBgY} className="-top-32 -left-24" />
@@ -178,7 +178,7 @@ export default function ContactPageContent() {
                 </span>
               </Reveal>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
                 <RevealText as="span" by="word" text="Let's Build Something" className="block" />
                 <span className="block">
                   <GradientText animate as="span" className="italic">

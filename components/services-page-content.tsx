@@ -146,7 +146,7 @@ export default function ServicesPageContent() {
   return (
     <>
       {/* Hero Section — editorial statement + engagement ledger */}
-      <section ref={heroRef} className="pt-36 pb-24 relative overflow-hidden bg-background">
+      <section ref={heroRef} className="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden bg-background">
         {/* decorative layers — pointer-events-none, behind z-10 */}
         <div aria-hidden className="grid-texture-dark absolute inset-0" />
         <GlowOrb color={ACCENT} size={520} opacity={0.1} parallax={heroOrbY} className="-top-32 -left-24" />
@@ -172,7 +172,7 @@ export default function ServicesPageContent() {
                 </span>
               </Reveal>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
                 <RevealText as="span" by="word" text="Comprehensive" delay={0.05} className="inline" />{" "}
                 <GradientText animate as="span" className="italic">
                   IT
@@ -253,7 +253,7 @@ export default function ServicesPageContent() {
       </section>
 
       {/* Services Grid — a framed hairline index: eleven disciplines + one invitation */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-border bg-border">
             {services.map((service, i) => (
@@ -357,7 +357,7 @@ export default function ServicesPageContent() {
       <LargeTextMarquee text="YOUR TECHNOLOGY PARTNER" speed={35} />
 
       {/* Process Section */}
-      <section ref={processRef} className="py-24 relative overflow-hidden bg-background">
+      <section ref={processRef} className="py-16 md:py-24 relative overflow-hidden bg-background">
         <GlowOrb color={ACCENT} size={420} opacity={0.07} parallax={processOrbY} className="top-1/3 right-[-8rem]" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -424,7 +424,7 @@ export default function ServicesPageContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.96 }}

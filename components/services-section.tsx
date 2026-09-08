@@ -105,7 +105,7 @@ export default function ServicesSection() {
   const fastY = useParallax(parallaxRef, { to: -64 })
 
   return (
-    <section ref={sectionRef} className="py-32 bg-background relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* faint architectural grid (light-section variant) */}
       <div aria-hidden className="grid-texture-dark absolute inset-0 opacity-[0.5] pointer-events-none" />
 

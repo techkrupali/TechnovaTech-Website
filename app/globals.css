@@ -294,6 +294,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Mobile safety net — a stray absolutely-positioned decoration must never
+   give the page a horizontal scrollbar. */
+html,
+body {
+  overflow-x: clip;
+}
+
 /* Selection color */
 ::selection {
   background: var(--foreground);
