@@ -682,38 +682,6 @@ export default function PortfolioPageContent() {
         </div>
       </section>
 
-      {/* ---------- dark typographic passage ---------- */}
-      <LargeTextMarquee text="SHIPPED ★ LIVE ★ IN SERVICE" speed={35} />
-
-      <section className="py-24 dark-section relative overflow-hidden">
-        <div aria-hidden className="grid-texture absolute inset-0 pointer-events-none" />
-        <GlowOrb color={ACCENT} size={460} opacity={0.1} className="top-1/4 -right-24" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <Reveal as="span" y={12} className="block font-mono text-xs uppercase tracking-[0.3em] text-white/50 mb-10">
-            Balance carried forward
-          </Reveal>
-
-          <Stagger className="max-w-3xl">
-            {totals.map((t) => (
-              <StaggerItem
-                key={t.label}
-                y={12}
-                className="flex items-end justify-between gap-4 py-5 border-b border-white/10"
-              >
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/50 mb-2">{t.label}</span>
-                <span aria-hidden className="flex-1 border-b border-dotted border-white/10 mb-3" />
-                <CountUp
-                  value={t.value}
-                  suffix={t.suffix}
-                  className="font-serif text-5xl md:text-6xl text-white leading-none"
-                />
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
       <RunningStrip text="TECHNOVA TECH • PROOF OF WORK" reverse speed={20} dark />
 
       {/* ---------- the reserved line ---------- */}
