@@ -375,49 +375,90 @@ export default function AboutPageContent() {
               }}
             />
 
-            <div className="space-y-16">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: DUR.base, ease: EASE_OUT }}
-                  className={`relative flex items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                >
-                  <div
-                    className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}
-                  >
-                    <SpotlightCard
-                      tone="light"
-                      className="inline-block p-6 rounded-2xl bg-card border border-border hover:border-foreground/20"
-                    >
-                      <span className="text-4xl font-serif text-foreground">{milestone.year}</span>
-                      <h3 className="text-xl font-medium mt-2 text-foreground">{milestone.title}</h3>
-                      <p className="text-muted-foreground mt-2">{milestone.description}</p>
-                    </SpotlightCard>
-                  </div>
+            <div className="space-y-6">
+              {milestones.map((milestone, index) => {
+                const even = index % 2 === 0
+                const now = milestone.status === "now"
+                const next = milestone.status === "next"
+                return (
                   <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ type: "spring", stiffness: 400, damping: 20, delay: 0.1 }}
-                    whileHover={reduceMotion ? undefined : { scale: 1.5 }}
-                    className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-foreground dark:bg-card md:-translate-x-1/2 border-4 border-background"
+                    key={milestone.year}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: DUR.base, ease: EASE_OUT }}
+                    className={`relative flex items-center gap-6 ${even ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
-                    {!reduceMotion && (
-                      <motion.span
-                        aria-hidden
-                        className="absolute inset-0 rounded-full"
-                        style={{ background: ACCENT }}
-                        animate={{ scale: [1, 2.4, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2.4, repeat: Number.POSITIVE_INFINITY, ease: "easeOut" }}
-                      />
-                    )}
+                    <div className={`flex-1 pl-8 md:pl-0 ${even ? "md:pr-10 md:flex md:justify-end" : "md:pl-10"}`}>
+                      <SpotlightCard
+                        tone="light"
+                        className={`group inline-block w-full md:max-w-sm rounded-xl border bg-card/80 backdrop-blur-sm p-5 text-left transition-colors duration-300 ${
+                          now
+                            ? "border-[#ef0b0a]/40 hover:border-[#ef0b0a]"
+                            : next
+                              ? "border-dashed border-border hover:border-foreground/25"
+                              : "border-border hover:border-foreground/25"
+                        }`}
+                      >
+                        <div className="relative z-10 flex items-baseline gap-3">
+                          <span
+                            className="font-serif text-2xl leading-none"
+                            style={{ color: now ? ACCENT : undefined }}
+                          >
+                            {milestone.year}
+                          </span>
+                          <span className="h-px flex-1 bg-border" aria-hidden />
+                          {now ? (
+                            <span
+                              className="rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white"
+                              style={{ backgroundColor: ACCENT }}
+                            >
+                              Now
+                            </span>
+                          ) : next ? (
+                            <span className="rounded-full border border-border px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+                              Ahead
+                            </span>
+                          ) : (
+                            <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="relative z-10 mt-3 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-foreground transition-colors duration-300 group-hover:text-[#ef0b0a]">
+                          {milestone.title}
+                        </h3>
+                        <p className={`relative z-10 mt-2 text-sm leading-relaxed ${next ? "text-muted-foreground/80" : "text-muted-foreground"}`}>
+                          {milestone.description}
+                        </p>
+                      </SpotlightCard>
+                    </div>
+
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{ type: "spring", stiffness: 400, damping: 20, delay: 0.1 }}
+                      whileHover={reduceMotion ? undefined : { scale: 1.4 }}
+                      className={`absolute left-0 md:left-1/2 h-3 w-3 rounded-full md:-translate-x-1/2 border-2 border-background ${
+                        next ? "bg-background outline outline-1 outline-muted-foreground" : ""
+                      }`}
+                      style={next ? undefined : { backgroundColor: now ? ACCENT : "var(--foreground)" }}
+                    >
+                      {now && !reduceMotion && (
+                        <motion.span
+                          aria-hidden
+                          className="absolute inset-0 rounded-full"
+                          style={{ background: ACCENT }}
+                          animate={{ scale: [1, 2.4, 1], opacity: [0.5, 0, 0.5] }}
+                          transition={{ duration: 2.4, repeat: Number.POSITIVE_INFINITY, ease: "easeOut" }}
+                        />
+                      )}
+                    </motion.div>
+                    <div className="flex-1 hidden md:block" />
                   </motion.div>
-                  <div className="flex-1 hidden md:block" />
-                </motion.div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
