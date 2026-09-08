@@ -88,6 +88,7 @@ export default function BuildJourney() {
   const progressRef = useRef(0)
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: ref,
     offset: ["start start", "end end"],
   })

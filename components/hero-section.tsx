@@ -31,6 +31,7 @@ export default function HeroSection() {
 
   // Content gently rises + fades as the hero scrolls away.
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: sectionRef,
     offset: ["start start", "end start"],
   })

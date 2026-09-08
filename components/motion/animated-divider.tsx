@@ -29,6 +29,7 @@ export function AnimatedDivider({
   const ref = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: ref,
     offset: ["start end", "end start"],
   })

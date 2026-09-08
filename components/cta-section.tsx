@@ -30,6 +30,7 @@ export default function CTASection() {
 
   // Subtle scroll-scrub zoom on the cluster — transform-only, reduced-motion safe.
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: sectionRef,
     offset: ["start end", "end start"],
   })

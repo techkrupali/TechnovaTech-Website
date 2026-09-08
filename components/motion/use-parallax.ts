@@ -32,6 +32,7 @@ export function useParallax(
   const reduce = useReducedMotion()
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: ref,
     // framer types offset loosely; cast keeps strict TS happy.
     offset: offset as never,

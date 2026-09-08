@@ -208,7 +208,7 @@ function PerforationDivider() {
 function LedgerEntry({ entry, index }: { entry: Entry; index: number }) {
   const reduce = useReducedMotion()
   const imgRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: imgRef, offset: ["start end", "end start"] })
+  const { scrollYProgress } = useScroll({ layoutEffect: false, target: imgRef, offset: ["start end", "end start"] })
   const rawY = useTransform(scrollYProgress, [0, 1], [60, -60])
   const imgY = reduce ? 0 : rawY
 

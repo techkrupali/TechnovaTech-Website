@@ -61,6 +61,7 @@ function ProductCard({ product, index }: { product: (typeof products)[0]; index:
   const cardRef = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: cardRef,
     offset: ["start end", "end start"],
   })
