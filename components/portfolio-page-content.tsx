@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
-import { useRef, type RefObject } from "react"
+import { useRef, useState, type RefObject } from "react"
 import { RunningStrip, LargeTextMarquee } from "./marquee-section"
 import {
   ACCENT,
@@ -99,6 +99,143 @@ const entries: Entry[] = [
     cta: "Enquire about DSAT Guru",
     external: false,
   },
+]
+
+/* ------------------------------------------------------------------ *
+ *  Selected projects — the filterable index. Every project carries a  *
+ *  single category; the chips above the grid filter on it.            *
+ * ------------------------------------------------------------------ */
+
+type Project = {
+  name: string
+  category: string
+  about: string
+  features: string[]
+  href: string
+  cta: string
+}
+
+const projects: Project[] = [
+  {
+    name: "Retailians POS",
+    category: "SaaS & ERP",
+    about:
+      "Our flagship point-of-sale and inventory platform, run daily by thousands of retail businesses across India.",
+    features: ["Fast billing & inventory", "GST-compliant reports", "Customer loyalty", "Offline mode"],
+    href: "https://retailians.com/",
+    cta: "Visit site",
+  },
+  {
+    name: "911 Wrap ERP",
+    category: "SaaS & ERP",
+    about:
+      "End-to-end ERP for automobile dealerships and wrap studios — orders, jobs, inventory and profit analytics in one place.",
+    features: ["Order management", "Workflow automation", "Accounts & billing", "Multi-user roles"],
+    href: "https://911wraperp.space/",
+    cta: "Visit site",
+  },
+  {
+    name: "DSAT Guru",
+    category: "Education",
+    about:
+      "A smart SAT-preparation platform — adaptive practice that meets each student at their level and tracks what actually improves scores.",
+    features: ["Adaptive practice", "Performance analytics", "Structured study plans"],
+    href: "/contact",
+    cta: "Enquire",
+  },
+  {
+    name: "Accessorize London",
+    category: "E-commerce",
+    about:
+      "Online fashion-accessories store for women and kids — bags, jewellery and hair accessories across gold-plated and sterling-silver lines.",
+    features: ["Full catalogue & search", "Women & kids collections", "Secure checkout & offers", "Mobile-first shopping"],
+    href: "https://accessorizelondon.in/",
+    cta: "Visit site",
+  },
+  {
+    name: "Get The Juice",
+    category: "E-commerce",
+    about:
+      "Storefront for a handcrafted leather, silver and gold jewellery brand from Dhaka — with personalised pieces and gift collections.",
+    features: ["Handcrafted catalogue", "Personalised collections", "bKash, Nagad & cards", "Gifting flows"],
+    href: "https://getthejuice.store/",
+    cta: "Visit site",
+  },
+  {
+    name: "Crown BD",
+    category: "E-commerce",
+    about:
+      "Brand storefront for Crown, Bangladesh — catalogue, collections and orders in one clean, fast web experience.",
+    features: ["Product catalogue", "Order & enquiry flows", "Fast responsive storefront"],
+    href: "https://crown-bd.com/",
+    cta: "Visit site",
+  },
+  {
+    name: "Healthengine",
+    category: "Health & Fitness",
+    about:
+      "Healthcare appointment-booking app — patients find nearby practitioners, book visits and manage their health details in one place.",
+    features: ["Practitioner search & booking", "Appointment reminders", "Digital health forms"],
+    href: "https://play.google.com/store/apps/details?id=com.healthengine.android",
+    cta: "Google Play",
+  },
+  {
+    name: "Daily Yoga",
+    category: "Health & Fitness",
+    about:
+      "Yoga and wellness platform with 2,000+ guided sessions — classic yoga to pilates — plus a smart coach that builds personal 28-day plans.",
+    features: ["2,000+ guided sessions", "Smart Coach plans", "Meditation & stress relief", "Health tracking"],
+    href: "https://apps.apple.com/in/app/daily-yoga-fitness-wellness/id545849922",
+    cta: "App Store",
+  },
+  {
+    name: "Planner Pro",
+    category: "Productivity",
+    about:
+      "All-in-one daily planner — calendar, tasks and notes unified so the whole day lives on one screen.",
+    features: ["Day / week / month views", "Tasks with reminders", "Notes on events", "Calendar sync"],
+    href: "https://play.google.com/store/apps/details?id=com.appxy.planner",
+    cta: "Google Play",
+  },
+  {
+    name: "Cat Runner: Decorate Home",
+    category: "Kids Games",
+    about:
+      "Casual endless-runner for kids — dash through colourful worlds, collect coins and decorate the cat's home level by level.",
+    features: ["Endless-runner gameplay", "Home-decoration progression", "Kid-friendly controls", "Colourful 3D worlds"],
+    href: "https://play.google.com/store/apps/details?id=com.solou.catendless.run",
+    cta: "Google Play",
+  },
+  {
+    name: "CSL Dating",
+    category: "Social",
+    about:
+      "Location-based social dating app for a global audience — profile discovery, matching and real-time chat.",
+    features: ["Profile discovery & matching", "Real-time chat", "Location-based browsing", "Safety & moderation"],
+    href: "https://play.google.com/store/apps/details?id=com.jaumo.casual",
+    cta: "Google Play",
+  },
+  {
+    name: "Superflow — AI Voice to Text",
+    category: "AI Tools",
+    about:
+      "AI voice-to-text app — speak naturally and get clean, formatted text anywhere on your phone.",
+    features: ["Accurate speech-to-text", "AI formatting & cleanup", "Works across apps", "Multi-language"],
+    href: "https://play.google.com/store/apps/details?id=ai.getsupernova.superflow",
+    cta: "Google Play",
+  },
+]
+
+const projectCategories = [
+  "All",
+  "SaaS & ERP",
+  "E-commerce",
+  "Education",
+  "Health & Fitness",
+  "Productivity",
+  "Kids Games",
+  "Social",
+  "AI Tools",
 ]
 
 const pad3 = (n: number) => String(n).padStart(3, "0")
@@ -331,6 +468,9 @@ function LedgerEntry({ entry, index }: { entry: Entry; index: number }) {
 
 export default function PortfolioPageContent() {
   const reduce = useReducedMotion()
+  const [activeCategory, setActiveCategory] = useState("All")
+  const visibleProjects =
+    activeCategory === "All" ? projects : projects.filter((p) => p.category === activeCategory)
   const heroRef = useRef<HTMLElement>(null)
   const heroOrbY = useParallax(heroRef as RefObject<HTMLElement>, { to: -120 })
 
@@ -413,6 +553,116 @@ export default function PortfolioPageContent() {
               {i < entries.length - 1 && <PerforationDivider />}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ---------- selected projects: the filterable index ---------- */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Reveal as="span" y={12} className="block font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Selected Projects
+              </Reveal>
+              <Reveal as="h2" delay={0.06} className="font-serif text-3xl md:text-4xl text-foreground mt-3">
+                Work across <GradientText animate>every category</GradientText>
+              </Reveal>
+            </div>
+            <Reveal y={16} delay={0.2} className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Websites, mobile apps and platforms we've built and shipped — pick a
+              category to browse.
+            </Reveal>
+          </div>
+
+          {/* category chips */}
+          <Reveal y={14} className="mb-10 flex flex-wrap gap-2">
+            {projectCategories.map((cat) => {
+              const active = activeCategory === cat
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  aria-pressed={active}
+                  className={`rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 ${
+                    active
+                      ? "border-transparent text-white"
+                      : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+                  }`}
+                  style={active ? { backgroundColor: ACCENT } : undefined}
+                >
+                  {cat}
+                </button>
+              )
+            })}
+          </Reveal>
+
+          {/* project cells */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-border bg-border">
+            {visibleProjects.map((project, i) => (
+              <motion.div
+                key={project.name}
+                layout={reduce ? undefined : true}
+                initial={reduce ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: EASE_OUT }}
+                className="bg-background"
+              >
+                <a
+                  href={project.href}
+                  target={project.href.startsWith("http") ? "_blank" : undefined}
+                  rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group relative flex h-full flex-col overflow-hidden bg-background p-8 transition-colors duration-500 hover:bg-secondary/40"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-8 bg-border" aria-hidden />
+                    <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-6 font-serif text-xl md:text-2xl text-foreground">
+                    {project.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {project.about}
+                  </p>
+
+                  <ul className="mt-5 space-y-2">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3 text-sm text-muted-foreground">
+                        <span
+                          aria-hidden
+                          className="h-1 w-1 shrink-0 rotate-45 bg-foreground/40 transition-colors duration-300 group-hover:bg-[#ef0b0a]"
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground">
+                    <span className="border-b border-foreground/25 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                      {project.cta}
+                    </span>
+                    <ArrowUpRight
+                      className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      style={{ color: ACCENT }}
+                    />
+                  </span>
+
+                  {/* red sweep on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                    style={{ backgroundColor: ACCENT }}
+                  />
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
