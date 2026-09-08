@@ -7,7 +7,6 @@ import { useRef, type RefObject } from "react"
 import { RunningStrip, LargeTextMarquee } from "./marquee-section"
 import {
   ACCENT,
-  ACCENTS,
   DUR,
   EASE_OUT,
   Reveal,
@@ -194,47 +193,88 @@ export default function AboutPageContent() {
       {/* Running Strip */}
       <RunningStrip text="INNOVATION • QUALITY • EXCELLENCE • GROWTH" speed={25} />
 
-      {/* Mission & Vision */}
-      <section ref={mvRef} className="py-24 bg-background relative overflow-hidden">
+      {/* Mission & Vision — a typographic diptych: the statements ARE the design */}
+      <section ref={mvRef} className="py-28 bg-background relative overflow-hidden">
         <GlowOrb color={ACCENT} size={460} opacity={0.1} parallax={mvOrbY} className="top-1/3 -right-40" />
+
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Reveal y={32}>
-              <SpotlightCard tone="light" className="h-full p-10 rounded-3xl bg-secondary/50 border border-border">
-                <motion.div
-                  whileHover={reduceMotion ? undefined : { rotate: 360 }}
-                  transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                  className="w-14 h-14 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mb-6"
-                >
-                  <Rocket className="w-7 h-7 text-background dark:text-foreground" />
-                </motion.div>
-                <h2 className="text-3xl font-serif mb-4 text-foreground">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  To empower businesses of all sizes with intelligent, scalable technology solutions that drive growth,
-                  efficiency, and innovation. We strive to make enterprise-grade technology accessible and affordable.
-                </p>
-              </SpotlightCard>
+          <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border border-y border-border">
+            {/* ---------- mission ---------- */}
+            <Reveal y={28} className="group relative py-14 pr-0 lg:pr-16">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-4 right-0 lg:right-16 select-none font-serif text-[9rem] leading-none text-foreground/[0.04]"
+              >
+                01
+              </span>
+
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                  01
+                </span>
+                <span className="h-px w-10 bg-border" aria-hidden />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                  Our Mission
+                </span>
+                <Rocket
+                  className="ml-auto h-4 w-4 text-muted-foreground transition-colors duration-300 group-hover:text-[#ef0b0a]"
+                  aria-hidden
+                />
+              </div>
+
+              <p className="mt-10 font-serif text-2xl md:text-[1.75rem] leading-[1.45] text-foreground max-w-xl">
+                To{" "}
+                <em className="not-italic font-serif italic" style={{ color: ACCENT }}>
+                  empower
+                </em>{" "}
+                businesses of all sizes with intelligent, scalable technology solutions that
+                drive growth, efficiency, and innovation.
+              </p>
+
+              <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
+                We strive to make enterprise-grade technology{" "}
+                <span className="text-foreground font-medium">accessible and affordable</span> —
+                the tools big companies take for granted, priced for the businesses still growing
+                into them.
+              </p>
             </Reveal>
 
-            <Reveal y={32} delay={0.1}>
-              <SpotlightCard
-                tone="light"
-                accent={ACCENTS[1]}
-                className="h-full p-10 rounded-3xl bg-secondary/50 border border-border"
+            {/* ---------- vision ---------- */}
+            <Reveal y={28} delay={0.12} className="group relative py-14 pl-0 lg:pl-16">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-4 right-0 select-none font-serif text-[9rem] leading-none text-foreground/[0.04]"
               >
-                <motion.div
-                  whileHover={reduceMotion ? undefined : { rotate: 360 }}
-                  transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                  className="w-14 h-14 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mb-6"
-                >
-                  <Eye className="w-7 h-7 text-background dark:text-foreground" />
-                </motion.div>
-                <h2 className="text-3xl font-serif mb-4 text-foreground">Our Vision</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  To become the leading technology partner for businesses worldwide, known for our innovative solutions,
-                  exceptional quality, and unwavering commitment to client success.
-                </p>
-              </SpotlightCard>
+                02
+              </span>
+
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                  02
+                </span>
+                <span className="h-px w-10 bg-border" aria-hidden />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                  Our Vision
+                </span>
+                <Eye
+                  className="ml-auto h-4 w-4 text-muted-foreground transition-colors duration-300 group-hover:text-[#ef0b0a]"
+                  aria-hidden
+                />
+              </div>
+
+              <p className="mt-10 font-serif text-2xl md:text-[1.75rem] leading-[1.45] text-foreground max-w-xl">
+                To become the{" "}
+                <em className="not-italic font-serif italic" style={{ color: ACCENT }}>
+                  leading technology partner
+                </em>{" "}
+                for businesses worldwide.
+              </p>
+
+              <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
+                Known for our innovative solutions, exceptional quality, and an{" "}
+                <span className="text-foreground font-medium">unwavering commitment to client success</span> —
+                the partner clients recommend before they're even asked.
+              </p>
             </Reveal>
           </div>
         </div>
