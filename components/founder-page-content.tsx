@@ -379,8 +379,8 @@ export default function FounderPageContent() {
         </div>
       </section>
 
-      {/* Achievement Section */}
-      <section ref={achievementRef} className="py-24 relative overflow-hidden bg-secondary/30">
+      {/* Achievement Section — pulled close under the tech stack */}
+      <section ref={achievementRef} className="pt-6 pb-24 relative overflow-hidden bg-secondary/30">
         <GlowOrb color={ACCENT} size={420} opacity={0.12} parallax={achievementBgY} className="-top-24 left-1/4" />
         <AmbientShape
           variant="ring"
