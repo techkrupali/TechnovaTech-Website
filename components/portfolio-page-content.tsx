@@ -544,18 +544,6 @@ export default function PortfolioPageContent() {
         </div>
       </section>
 
-      {/* ---------- ledger entries ---------- */}
-      <section className="bg-background">
-        <div className="container mx-auto px-6">
-          {entries.map((entry, i) => (
-            <div key={entry.name}>
-              <LedgerEntry entry={entry} index={i} />
-              {i < entries.length - 1 && <PerforationDivider />}
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ---------- selected projects: the filterable index ---------- */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
