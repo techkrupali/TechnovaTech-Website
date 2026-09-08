@@ -89,7 +89,6 @@ const entries: Entry[] = [
   },
   {
     name: "DSAT Guru",
-    image: "/projects/dsat-guru-logo.png",
     category: "EdTech · SAT Prep",
     status: "prep",
     statusLine: "In preparation",
