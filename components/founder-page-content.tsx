@@ -221,8 +221,8 @@ export default function FounderPageContent() {
         </div>
       </section>
 
-      {/* Bio Section */}
-      <section className="py-20 relative bg-background">
+      {/* Bio Section — pulled close under the hero */}
+      <section className="pt-4 pb-20 relative bg-background">
         <div className="container mx-auto px-6">
           <Reveal className="max-w-4xl mx-auto">
             <SpotlightCard tone="light" lift={-6} className="p-10 rounded-3xl bg-card border border-border">
