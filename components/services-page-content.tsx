@@ -22,13 +22,11 @@ import {
   ACCENT,
   DUR,
   EASE_OUT,
-  SPRING_POP,
   Reveal,
   RevealText,
   Stagger,
   StaggerItem,
   GradientText,
-  SpotlightCard,
   MagneticButton,
   ShineOverlay,
   GlowOrb,
@@ -107,10 +105,34 @@ const services = [
 ]
 
 const processSteps = [
-  { step: "01", title: "Discovery", description: "Understanding your business needs and goals" },
-  { step: "02", title: "Strategy", description: "Creating a comprehensive project roadmap" },
-  { step: "03", title: "Development", description: "Building with agile methodology and best practices" },
-  { step: "04", title: "Delivery", description: "Deploying, testing, and providing ongoing support" },
+  {
+    step: "01",
+    title: "Discovery",
+    description:
+      "We sit with you and map the real problem — users, workflows, constraints — before anyone talks technology.",
+    deliverable: "Clear scope & honest estimate",
+  },
+  {
+    step: "02",
+    title: "Strategy",
+    description:
+      "Architecture, milestones and priorities laid out in one roadmap, so you always know what ships when — and what it costs.",
+    deliverable: "Roadmap with fixed milestones",
+  },
+  {
+    step: "03",
+    title: "Development",
+    description:
+      "Agile sprints with working software every week. You watch the product grow — no waiting months for a big reveal.",
+    deliverable: "Weekly builds you can click",
+  },
+  {
+    step: "04",
+    title: "Delivery & Beyond",
+    description:
+      "Deployment, testing and handover — then monitoring, patches and a real human on the line long after launch day.",
+    deliverable: "Launch + 24/7 support",
+  },
 ]
 
 export default function ServicesPageContent() {
@@ -339,41 +361,64 @@ export default function ServicesPageContent() {
         <GlowOrb color={ACCENT} size={420} opacity={0.07} parallax={processOrbY} className="top-1/3 right-[-8rem]" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="mb-16">
-            <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
-              Our Process
+          <div className="mb-20 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                Our Process
+              </Reveal>
+              <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
+                <RevealText as="span" by="word" text="How We" delay={0.05} className="inline" />{" "}
+                <GradientText animate as="span">
+                  Work
+                </GradientText>
+              </h2>
+              <AnimatedDivider accent={ACCENT} className="text-foreground mt-8 max-w-xs" />
+            </div>
+            <Reveal y={16} delay={0.2} className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Four phases, no black box — you see working software every week and know
+              exactly where the project stands.
             </Reveal>
-            <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
-              <RevealText as="span" by="word" text="How We" delay={0.05} className="inline" />{" "}
-              <GradientText animate as="span">
-                Work
-              </GradientText>
-            </h2>
-            <AnimatedDivider accent={ACCENT} className="text-foreground mt-8 max-w-xs" />
           </div>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {processSteps.map((item) => (
-              <StaggerItem key={item.step}>
-                <SpotlightCard
-                  tone="light"
-                  accent={ACCENT}
-                  className="h-full text-center p-8 rounded-2xl bg-card border border-border"
-                >
-                  <motion.div
-                    initial={reduce ? false : { scale: 0, opacity: 0 }}
-                    whileInView={reduce ? undefined : { scale: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={SPRING_POP}
-                    className="relative z-10 text-6xl font-serif text-foreground/10 mb-4"
-                  >
-                    {item.step}
-                  </motion.div>
-                  <h3 className="relative z-10 text-xl font-medium mb-2 text-foreground">{item.title}</h3>
-                  <p className="relative z-10 text-sm text-muted-foreground">{item.description}</p>
-                </SpotlightCard>
-              </StaggerItem>
-            ))}
+          {/* the route: one rule runs through all four phases, a node at each */}
+          <Stagger className="relative grid grid-cols-1 gap-y-12 md:grid-cols-4 md:gap-x-10 md:gap-y-0">
+            {/* connecting line (desktop) */}
+            <span aria-hidden className="pointer-events-none absolute top-[5px] left-0 hidden h-px w-full bg-border md:block" />
+
+            {processSteps.map((item, i) => {
+              const last = i === processSteps.length - 1
+              return (
+                <StaggerItem key={item.step}>
+                  <div className="group relative md:pt-10">
+                    {/* node on the rule */}
+                    <span
+                      aria-hidden
+                      className="absolute top-0 left-0 hidden h-[11px] w-[11px] rounded-full border-2 border-background transition-colors duration-300 md:block"
+                      style={{ backgroundColor: last ? ACCENT : "var(--foreground)" }}
+                    />
+
+                    <span className="font-mono text-xs tracking-[0.25em]" style={{ color: ACCENT }}>
+                      PHASE {item.step}
+                    </span>
+
+                    <h3 className="mt-4 font-serif text-2xl text-foreground transition-colors duration-300 group-hover:text-[#ef0b0a]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <div className="mt-5 flex items-center gap-2 border-t border-border pt-4">
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0" style={{ color: ACCENT }} aria-hidden />
+                      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground">
+                        {item.deliverable}
+                      </span>
+                    </div>
+                  </div>
+                </StaggerItem>
+              )
+            })}
           </Stagger>
         </div>
       </section>
