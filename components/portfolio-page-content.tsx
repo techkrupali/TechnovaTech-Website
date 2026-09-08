@@ -348,6 +348,23 @@ const projects: Project[] = [
     cta: "App Store",
   },
   {
+    name: "Rebel Girls",
+    image: "/projects/rebel-girls.jpg",
+    category: "Education",
+    about:
+      "Audio stories for kids from the award-winning \u201cGood Night Stories for Rebel Girls\u201d \u2014 real-life tales of amazing women, completely free and KidSafe with no ads or subscriptions.",
+    features: [
+      "Award-winning audio stories",
+      "Real-life role models for kids",
+      "Bedtime & wind-down listening",
+      "KidSafe certified content",
+      "No ads, no subscriptions",
+      "New stories added regularly",
+    ],
+    href: "https://apps.apple.com/in/app/rebel-girls/id1555126110",
+    cta: "App Store",
+  },
+  {
     name: "CSL Dating",
     image: "/projects/csl-dating.png",
     category: "Social",
