@@ -155,9 +155,6 @@ export default function ServicesPageContent() {
         </div>
       </section>
 
-      {/* Running Strip */}
-      <RunningStrip text="AI • SAAS • ERP • MOBILE • WEB • CLOUD" speed={25} />
-
       {/* Services Grid */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
