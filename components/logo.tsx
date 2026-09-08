@@ -138,27 +138,28 @@ export type LogoProps = LogoMarkProps & {
   markOnly?: boolean
 }
 
-/** Mark + wordmark lockup. TECHNOVA in mono caps, TECH as the tracked sub-line. */
-export function Logo({ size = 40, ink = "#0a0a0f", markOnly = false, ...rest }: LogoProps) {
+/* The Technova Technologies wordmark, as artwork. Two files, one per theme:
+   dark ink on transparent for light mode, white on transparent for dark mode.
+   `size` is the rendered HEIGHT in px — the same knob the old lockup used —
+   so existing call sites keep their exact footprint. */
+const LOGO_LIGHT = "/logo-light-mode.png"
+const LOGO_DARK = "/logo-dark-mode.png"
+
+export function Logo({ size = 40, className }: LogoProps) {
   return (
-    <span className="flex items-center gap-2.5">
-      <LogoMark size={size} ink={ink} {...rest} />
-      {!markOnly && (
-        <span className="flex flex-col leading-none">
-          <span
-            className="font-mono font-bold tracking-[0.1em]"
-            style={{ color: ink, fontSize: size * 0.3 }}
-          >
-            TECHNOVA
-          </span>
-          <span
-            className="font-mono uppercase tracking-[0.26em] mt-1 opacity-60"
-            style={{ color: ink, fontSize: size * 0.19 }}
-          >
-            Tech
-          </span>
-        </span>
-      )}
+    <span className={className ?? "flex items-center"}>
+      <img
+        src={LOGO_LIGHT}
+        alt="Technova Technologies"
+        className="block dark:hidden w-auto"
+        style={{ height: size }}
+      />
+      <img
+        src={LOGO_DARK}
+        alt="Technova Technologies"
+        className="hidden dark:block w-auto"
+        style={{ height: size }}
+      />
     </span>
   )
 }
