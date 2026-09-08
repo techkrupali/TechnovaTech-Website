@@ -716,7 +716,7 @@ export default function PortfolioPageContent() {
           </Reveal>
 
           {/* project cells */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-border bg-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
             {visibleProjects.map((project, i) => (
               <motion.div
                 key={project.name}
@@ -724,7 +724,7 @@ export default function PortfolioPageContent() {
                 initial={reduce ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: EASE_OUT }}
-                className="bg-background"
+                className="bg-background border-b border-r border-border"
               >
                 <div className="group relative flex h-full flex-col overflow-hidden bg-background p-8 transition-colors duration-500 hover:bg-secondary/40">
                   <div className="flex items-center gap-4">
