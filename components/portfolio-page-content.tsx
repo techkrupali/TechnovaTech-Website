@@ -88,6 +88,7 @@ const entries: Entry[] = [
   },
   {
     name: "DSAT Guru",
+    image: "/projects/dsat-guru-logo.png",
     category: "EdTech · SAT Prep",
     status: "prep",
     statusLine: "In preparation",
@@ -138,12 +139,13 @@ const projects: Project[] = [
   },
   {
     name: "DSAT Guru",
+    image: "/projects/dsat-guru-logo.png",
     category: "Education",
     about:
       "A smart SAT-preparation platform — adaptive practice that meets each student at their level and tracks what actually improves scores.",
     features: ["Adaptive practice", "Performance analytics", "Structured study plans"],
-    href: "/contact",
-    cta: "Enquire",
+    href: "https://dsatguru.com/",
+    cta: "Visit site",
   },
   {
     name: "Accessorize London",
