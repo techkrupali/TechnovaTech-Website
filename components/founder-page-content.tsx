@@ -267,44 +267,67 @@ export default function FounderPageContent() {
         />
 
         <div className="container mx-auto px-6 relative z-10">
-          <Reveal className="mb-16">
-            <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
-              Strong <GradientText animate>Expertise</GradientText> Areas
-            </h2>
-          </Reveal>
+          <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Reveal as="span" y={12} className="block text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                Expertise
+              </Reveal>
+              <Reveal as="h2" delay={0.08} className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
+                Strong <GradientText animate>Expertise</GradientText> Areas
+              </Reveal>
+            </div>
+            <Reveal y={16} delay={0.2} className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Four disciplines, kept sharp on real projects — not certificates on a wall,
+              systems running in production.
+            </Reveal>
+          </div>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-border">
             {expertise.map((area, index) => (
-              <StaggerItem key={area.title}>
-                <SpotlightCard
-                  tone="light"
-                  accent={ACCENTS[index % ACCENTS.length]}
-                  lift={-10}
-                  className="h-full p-8 rounded-3xl bg-card border border-border"
-                >
-                  <div className="relative z-10 flex items-center gap-4 mb-6">
-                    <motion.div
-                      whileHover={reduce ? undefined : { rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.5, ease: EASE_OUT }}
-                      className="w-14 h-14 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center"
-                    >
-                      <area.icon className="w-7 h-7 text-background dark:text-foreground" />
-                    </motion.div>
-                    <h3 className="text-xl font-medium text-foreground">{area.title}</h3>
+              <StaggerItem key={area.title} className="border-b border-r border-border bg-background">
+                <div className="group relative h-full overflow-hidden p-10 md:p-12 transition-colors duration-500 hover:bg-secondary/40">
+                  {/* ghost numeral */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-6 right-4 select-none font-serif text-[8rem] leading-none text-foreground/[0.04] transition-colors duration-500 group-hover:text-foreground/[0.07]"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="relative flex items-center gap-4">
+                    <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-10 bg-border" aria-hidden />
+                    <area.icon
+                      className="ml-auto h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-[#ef0b0a]"
+                      aria-hidden
+                    />
                   </div>
-                  <ul className="relative z-10 space-y-3">
+
+                  <h3 className="relative mt-8 font-serif text-2xl md:text-3xl text-foreground">
+                    {area.title}
+                  </h3>
+
+                  <ul className="relative mt-6 space-y-3">
                     {area.items.map((item) => (
                       <li key={item} className="flex items-center gap-3 text-muted-foreground">
                         <span
-                          className="w-1.5 h-1.5 rounded-full shrink-0"
-                          style={{ background: ACCENTS[index % ACCENTS.length] }}
+                          aria-hidden
+                          className="h-1 w-1 shrink-0 rotate-45 bg-foreground/40 transition-colors duration-300 group-hover:bg-[#ef0b0a]"
                         />
                         {item}
                       </li>
                     ))}
                   </ul>
-                </SpotlightCard>
+
+                  {/* red sweep — draws along the bottom edge on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                    style={{ backgroundColor: ACCENT }}
+                  />
+                </div>
               </StaggerItem>
             ))}
           </Stagger>
