@@ -28,22 +28,26 @@ const values = [
   {
     icon: Target,
     title: "Innovation First",
-    description: "We constantly push boundaries to deliver cutting-edge solutions that keep our clients ahead.",
+    description:
+      "We constantly push boundaries to deliver cutting-edge solutions that keep our clients ahead — and every new tool we adopt has to earn its place by solving a real problem.",
   },
   {
     icon: Eye,
     title: "Quality Focus",
-    description: "Every line of code is crafted with precision, ensuring robust and scalable applications.",
+    description:
+      "Every line of code is crafted with precision, ensuring robust and scalable applications — reviewed, tested and load-proven before anything ships.",
   },
   {
     icon: Heart,
     title: "Client Success",
-    description: "Your success is our success. We partner with you to achieve your business goals.",
+    description:
+      "Your success is our success. We partner with you to achieve your business goals — measured on your dashboard, not ours.",
   },
   {
     icon: Users,
     title: "Collaboration",
-    description: "We believe in transparent communication and working together as an extension of your team.",
+    description:
+      "We believe in transparent communication and working together as an extension of your team — one channel, straight answers, no surprises.",
   },
 ]
 
@@ -283,35 +287,61 @@ export default function AboutPageContent() {
       {/* Large Text Marquee */}
       <LargeTextMarquee text="TECHNOVA TECH • SINCE 2019" speed={30} />
 
-      {/* Values Section */}
+      {/* Values Section — a framed quadrant: four principles behind hairline rules */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          <div className="mb-16">
-            <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground block">
-              Our Values
+          <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground block">
+                Our Values
+              </Reveal>
+              <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
+                What <GradientText tone="light">Drives Us</GradientText>
+              </h2>
+            </div>
+            <Reveal y={16} delay={0.2} className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Four principles we hold ourselves to on every engagement — not poster
+              words, working rules.
             </Reveal>
-            <h2 className="text-4xl md:text-5xl font-serif mt-4 text-foreground">
-              What <GradientText tone="light">Drives Us</GradientText>
-            </h2>
           </div>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value) => (
-              <StaggerItem key={value.title}>
-                <SpotlightCard
-                  tone="light"
-                  className="h-full p-8 rounded-2xl bg-card border border-border hover:border-foreground/20"
-                >
-                  <motion.div
-                    whileHover={reduceMotion ? undefined : { rotate: 360, scale: 1.1 }}
-                    transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                    className="w-14 h-14 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mb-6"
+          <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-px border border-border bg-border">
+            {values.map((value, i) => (
+              <StaggerItem key={value.title} className="bg-background">
+                <div className="group relative h-full overflow-hidden bg-background p-10 md:p-12 transition-colors duration-500 hover:bg-secondary/40">
+                  {/* ghost numeral */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-6 right-4 select-none font-serif text-[8rem] leading-none text-foreground/[0.04] transition-colors duration-500 group-hover:text-foreground/[0.07]"
                   >
-                    <value.icon className="w-7 h-7 text-background dark:text-foreground" />
-                  </motion.div>
-                  <h3 className="text-xl font-medium mb-3 text-foreground">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </SpotlightCard>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="relative flex items-center gap-4">
+                    <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-10 bg-border" aria-hidden />
+                    <value.icon
+                      className="ml-auto h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:scale-110 group-hover:text-[#ef0b0a]"
+                      aria-hidden
+                    />
+                  </div>
+
+                  <h3 className="relative mt-8 font-serif text-2xl md:text-3xl text-foreground">
+                    {value.title}
+                  </h3>
+                  <p className="relative mt-4 max-w-md leading-relaxed text-muted-foreground">
+                    {value.description}
+                  </p>
+
+                  {/* red sweep — draws along the bottom edge on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
+                    style={{ backgroundColor: ACCENT }}
+                  />
+                </div>
               </StaggerItem>
             ))}
           </Stagger>
