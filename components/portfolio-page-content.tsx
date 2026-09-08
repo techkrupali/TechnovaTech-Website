@@ -946,90 +946,63 @@ export default function PortfolioPageContent() {
 
       <RunningStrip text="TECHNOVA TECH • PROOF OF WORK" reverse speed={20} dark />
 
-      {/* ---------- the open slot: dark editorial CTA ---------- */}
-      <section id="next-entry" className="py-28 dark-section relative overflow-hidden scroll-mt-24">
-        <div aria-hidden className="grid-texture absolute inset-0 pointer-events-none" />
-        <GlowOrb color={ACCENT} size={520} opacity={0.14} className="-bottom-40 -left-24" />
+      {/* ---------- the open slot: centered light CTA ---------- */}
+      <section id="next-entry" className="py-28 bg-background relative overflow-hidden scroll-mt-24">
+        <div aria-hidden className="grid-texture-dark absolute inset-0 opacity-[0.5] pointer-events-none" />
+        <GlowOrb color={ACCENT} size={520} opacity={0.1} className="-bottom-40 -left-24" />
 
         {/* ghost numeral of the next open slot */}
         <span
           aria-hidden
-          className="pointer-events-none absolute -right-4 -bottom-20 select-none font-serif text-[16rem] md:text-[24rem] leading-none text-white/[0.04]"
+          className="pointer-events-none absolute -right-4 -bottom-20 select-none font-serif text-[16rem] md:text-[24rem] leading-none text-foreground/[0.04]"
         >
           {String(projects.length + 1).padStart(2, "0")}
         </span>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
-            {/* ---------- statement ---------- */}
-            <div className="lg:col-span-8">
-              <Reveal y={12} className="flex items-center gap-3">
-                <span
-                  className="h-1.5 w-1.5 rounded-full animate-pulse-glow"
-                  style={{ backgroundColor: ACCENT }}
-                />
-                <span className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">
-                  Slot {String(projects.length + 1).padStart(2, "0")} — reserved for your project
-                </span>
-              </Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal y={12} className="flex items-center justify-center gap-3">
+              <span
+                className="h-1.5 w-1.5 rounded-full animate-pulse-glow"
+                style={{ backgroundColor: ACCENT }}
+              />
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Slot {String(projects.length + 1).padStart(2, "0")} — reserved for your project
+              </span>
+            </Reveal>
 
-              <Reveal as="h2" delay={0.08} className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-white">
-                The next entry could be{" "}
-                <GradientText tone="dark" animate as="span" className="italic">
-                  yours
-                </GradientText>
-                <motion.span
-                  aria-hidden
-                  className="ml-2 inline-block h-2.5 w-2.5 md:h-3.5 md:w-3.5 rounded-full align-baseline"
-                  style={{ backgroundColor: ACCENT }}
-                  initial={reduce ? false : { scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={VIEWPORT}
-                  transition={{ type: "spring", stiffness: 400, damping: 18, delay: 0.5 }}
-                />
-              </Reveal>
+            <Reveal as="h2" delay={0.08} className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-foreground">
+              The next entry could be{" "}
+              <GradientText animate as="span" className="italic">
+                yours
+              </GradientText>
+              <motion.span
+                aria-hidden
+                className="ml-2 inline-block h-2.5 w-2.5 md:h-3.5 md:w-3.5 rounded-full align-baseline"
+                style={{ backgroundColor: ACCENT }}
+                initial={reduce ? false : { scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={VIEWPORT}
+                transition={{ type: "spring", stiffness: 400, damping: 18, delay: 0.5 }}
+              />
+            </Reveal>
 
-              <Reveal as="p" y={16} delay={0.2} className="mt-6 max-w-xl text-lg leading-relaxed text-white/60">
-                This space is earned, not filled. Tell us what you're building — a product,
-                a platform, a storefront — and let's put your name on the next line of the index.
-              </Reveal>
+            <Reveal as="p" y={16} delay={0.2} className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              This space is earned, not filled. Tell us what you're building — a product,
+              a platform, a storefront — and let's put your name on the next line of the index.
+            </Reveal>
 
-              <Reveal y={16} delay={0.35} className="mt-10">
-                <MagneticButton
-                  as={Link}
-                  href="/contact"
-                  className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-accent font-medium text-sm"
-                >
-                  <ShineOverlay trigger="hover" tone="dark" />
-                  <span className="relative z-10">Start Your Project</span>
-                  <ArrowUpRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
-                </MagneticButton>
-              </Reveal>
-            </div>
-
-            {/* ---------- the open slot, as a ledger ---------- */}
-            <Stagger className="lg:col-span-4">
-              {[
-                { label: "Slot", value: String(projects.length + 1).padStart(2, "0") },
-                { label: "Status", value: "Open" },
-                { label: "First reply", value: "Within 24 hours" },
-                { label: "Kick-off", value: "Days, not months" },
-              ].map((fact, i) => (
-                <StaggerItem key={fact.label}>
-                  <div className="flex items-baseline gap-5 border-t border-white/10 py-5 last:border-b">
-                    <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: ACCENT }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 w-20 shrink-0">
-                      {fact.label}
-                    </span>
-                    <span className="ml-auto text-right font-serif text-xl md:text-2xl text-white">
-                      {fact.value}
-                    </span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
+            <Reveal y={16} delay={0.35} className="mt-10">
+              <MagneticButton
+                as={Link}
+                href="/contact"
+                className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-accent font-medium text-sm"
+              >
+                <ShineOverlay trigger="hover" tone="dark" />
+                <span className="relative z-10">Start Your Project</span>
+                <ArrowUpRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
+              </MagneticButton>
+            </Reveal>
           </div>
         </div>
       </section>
