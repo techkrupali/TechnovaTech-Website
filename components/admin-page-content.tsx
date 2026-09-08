@@ -263,7 +263,7 @@ export default function AdminPageContent() {
           {error && <p className="text-sm text-red-500 mb-3">{error}</p>}
           <button
             onClick={login}
-            className="w-full py-3 rounded-xl btn-lime font-medium text-sm"
+            className="w-full py-3 rounded-xl btn-accent font-medium text-sm"
           >
             Enter
           </button>
@@ -352,7 +352,7 @@ export default function AdminPageContent() {
       <main className="container mx-auto px-6 py-10 space-y-10 pb-40">
         {/* reply alert — the moment a lead writes back */}
         {repliedLeads.length > 0 && (
-          <div className="p-5 rounded-2xl border-2 flex items-start gap-3" style={{ borderColor: ACCENT, backgroundColor: "rgba(200,255,0,0.06)" }}>
+          <div className="p-5 rounded-2xl border-2 flex items-start gap-3" style={{ borderColor: ACCENT, backgroundColor: "rgba(239,11,10,0.06)" }}>
             <Bell className="w-5 h-5 mt-0.5 animate-pulse-glow" style={{ color: ACCENT }} />
             <div>
               <p className="font-serif text-lg text-foreground">
@@ -597,7 +597,7 @@ export default function AdminPageContent() {
                               ? "bg-secondary text-muted-foreground"
                               : win.hasWindow && !win.open
                                 ? "border border-border text-muted-foreground cursor-not-allowed"
-                                : "btn-lime"
+                                : "btn-accent"
                           }`}
                         >
                           <Mail className="w-4 h-4" />

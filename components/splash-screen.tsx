@@ -167,7 +167,7 @@ export default function SplashScreen() {
             transition={{ duration: 0.8, ease: EASE_OUT, delay: reduce ? 0 : 1.9 }}
           >
             <span
-              className="inline-block px-3 py-1.5 font-mono text-[8.5px] font-bold uppercase tracking-[0.25em] text-[#0a0a0f] sm:px-4 sm:py-2 sm:text-[10px]"
+              className="inline-block px-3 py-1.5 font-mono text-[8.5px] font-bold uppercase tracking-[0.25em] text-white sm:px-4 sm:py-2 sm:text-[10px]"
               style={{ backgroundColor: ACCENT }}
             >
               Turning Vision Into Innovation &nbsp;★&nbsp; AI · SaaS · ERP · Cloud

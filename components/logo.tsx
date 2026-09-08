@@ -45,7 +45,7 @@ export type LogoMarkProps = {
   size?: number
   /** ink colour — pass a light value to place the mark on a dark section */
   ink?: string
-  /** accent colour for the nested V — the signature lime #c8ff00 */
+  /** accent colour for the nested V — the signature lime #ef0b0a */
   accent?: string
   /** draw the faint 5x5 field behind the mark. Turn OFF below ~40px: it becomes noise. */
   field?: boolean

@@ -120,7 +120,7 @@ export function signatureHtml(signer: Signer = FOUNDER) {
              style="display:block;width:84px;height:84px;border:0;border-radius:14px;">
       </a>
     </td>
-    <td valign="top" style="border-left:3px solid #c8ff00;padding:2px 0 2px 20px;">
+    <td valign="top" style="border-left:3px solid #ef0b0a;padding:2px 0 2px 20px;">
       <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.2;color:#111111;">
         ${first}${last ? ` <span style="font-style:italic;">${last}</span>` : ""}
       </div>
@@ -138,18 +138,18 @@ export function signatureHtml(signer: Signer = FOUNDER) {
         <a href="mailto:${signer.email}" style="color:#111111;text-decoration:none;">${signer.email}</a>
         <br>
         ${INSTAGRAM
-          ? `<a href="${INSTAGRAM}" style="color:#4d6b00;font-weight:bold;text-decoration:none;">Instagram</a>`
-          : `<a href="${SITE}" style="color:#4d6b00;font-weight:bold;text-decoration:none;">madvision.tech</a>`}
+          ? `<a href="${INSTAGRAM}" style="color:#b30d0b;font-weight:bold;text-decoration:none;">Instagram</a>`
+          : `<a href="${SITE}" style="color:#b30d0b;font-weight:bold;text-decoration:none;">madvision.tech</a>`}
         &nbsp;&middot;&nbsp;
-        <a href="${LINKEDIN}" style="color:#4d6b00;font-weight:bold;text-decoration:none;">LinkedIn</a>
+        <a href="${LINKEDIN}" style="color:#b30d0b;font-weight:bold;text-decoration:none;">LinkedIn</a>
         &nbsp;&middot;&nbsp;
-        <a href="${GITHUB}" style="color:#4d6b00;font-weight:bold;text-decoration:none;">GitHub</a>
+        <a href="${GITHUB}" style="color:#b30d0b;font-weight:bold;text-decoration:none;">GitHub</a>
       </div>
       <div style="font-size:10.5px;color:#8a8a8a;padding-top:10px;line-height:1.7;">
         ${offices}
       </div>
-      <div style="padding-top:12px;font-size:9px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#0a0a0f;">
-        <span style="background:#c8ff00;padding:4px 10px;display:inline-block;">${TAGLINE}</span>
+      <div style="padding-top:12px;font-size:9px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#ffffff;">
+        <span style="background:#ef0b0a;padding:4px 10px;display:inline-block;">${TAGLINE}</span>
       </div>
     </td>
   </tr>

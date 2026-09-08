@@ -45,7 +45,7 @@ const STAGES: Stage[] = [
     short: "R&D",
     title: "Research & Development",
     desc: "We dig into your goals, users and market — sketching ideas, mapping flows and validating concepts before a single line of code is written.",
-    accent: "#f59e0b",
+    accent: "#ff5a56",
     Icon: Search,
   },
   {
@@ -54,7 +54,7 @@ const STAGES: Stage[] = [
     short: "Development",
     title: "Development",
     desc: "Approved designs turn into clean, scalable code. Modular architecture, real data and pixel-perfect interfaces — built to last.",
-    accent: "#38bdf8",
+    accent: "#ef0b0a",
     Icon: Code2,
   },
   {
@@ -63,7 +63,7 @@ const STAGES: Stage[] = [
     short: "QA",
     title: "Quality Assurance",
     desc: "Every flow is tested across devices and edge cases. Bugs get squashed, performance is tuned and accessibility is verified.",
-    accent: "#34d399",
+    accent: "#b30d0b",
     Icon: Bug,
   },
   {
@@ -72,7 +72,7 @@ const STAGES: Stage[] = [
     short: "Production",
     title: "Production Handover",
     desc: "We ship to production, monitor the launch and hand over the keys — documentation, access and a product that's live and growing.",
-    accent: "#a78bfa",
+    accent: "#8c0605",
     Icon: Rocket,
   },
 ]

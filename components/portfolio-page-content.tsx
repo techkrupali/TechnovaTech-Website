@@ -238,7 +238,7 @@ function LedgerEntry({ entry, index }: { entry: Entry; index: number }) {
               <StrokeNumeral
                 text={pad3(index + 1)}
                 className="text-7xl lg:text-[9rem]"
-                stroke="rgba(200,255,0,0.35)"
+                stroke="rgba(239,11,10,0.35)"
               />
             </motion.span>
           </div>
@@ -355,7 +355,7 @@ export default function PortfolioPageContent() {
         <GlowOrb color={ACCENT} size={520} opacity={0.12} parallax={heroOrbY} className="-top-40 -left-32" />
         <span
           aria-hidden
-          className="text-stroke-lime pointer-events-none select-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-serif text-[18vw] leading-none font-bold text-transparent opacity-40"
+          className="text-stroke-accent pointer-events-none select-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-serif text-[18vw] leading-none font-bold text-transparent opacity-40"
         >
           SHIPPED
         </span>
@@ -424,7 +424,7 @@ export default function PortfolioPageContent() {
                   className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-8 py-5 border-b border-border"
                 >
                   <span
-                    className="font-serif text-4xl md:text-5xl leading-none text-transparent transition-all duration-300 group-hover:[-webkit-text-stroke:1px_rgba(200,255,0,0.6)]"
+                    className="font-serif text-4xl md:text-5xl leading-none text-transparent transition-all duration-300 group-hover:[-webkit-text-stroke:1px_rgba(239,11,10,0.6)]"
                     style={{ WebkitTextStroke: "1px rgba(0,0,0,0.15)" }}
                   >
                     {pad3(i + 1)}
@@ -583,7 +583,7 @@ export default function PortfolioPageContent() {
                 <MagneticButton
                   as={Link}
                   href="/contact"
-                  className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-lime font-medium text-sm"
+                  className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-accent font-medium text-sm"
                 >
                   <ShineOverlay trigger="hover" tone="dark" />
                   <span className="relative z-10">Start Your Project</span>

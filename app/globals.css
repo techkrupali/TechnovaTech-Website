@@ -17,8 +17,8 @@
   --secondary-foreground: oklch(0.12 0 0);
   --muted: oklch(0.92 0 0);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.75 0.15 85);
-  --accent-foreground: oklch(0.12 0 0);
+  --accent: #ef0b0a;
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.88 0 0);
@@ -61,8 +61,8 @@
   --secondary-foreground: oklch(0.96 0.002 90);
   --muted: oklch(0.26 0.004 90);
   --muted-foreground: oklch(0.7 0.004 90);
-  --accent: oklch(0.75 0.15 85);
-  --accent-foreground: oklch(0.15 0.004 90);
+  --accent: #ef0b0a;
+  --accent-foreground: oklch(0.96 0.002 90);
   --destructive: oklch(0.62 0.22 27);
   --destructive-foreground: oklch(0.96 0.002 90);
   --border: oklch(0.29 0.004 90);
@@ -174,15 +174,15 @@
   color: #fff;
 }
 
-/* Lime signature CTA button (pairs with MagneticButton + ShineOverlay) */
-.btn-lime {
-  background: #c8ff00;
-  color: #0a0a0f;
+/* Red signature CTA button (pairs with MagneticButton + ShineOverlay) */
+.btn-accent {
+  background: #ef0b0a;
+  color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
-.btn-lime:hover {
-  background: #d4ff33;
+.btn-accent:hover {
+  background: #d10c09;
 }
 
 /* Vertical text */
@@ -339,9 +339,9 @@ html {
   );
 }
 
-/* Lime-tinted stroked giant words (marquee / watermark). */
-.text-stroke-lime {
-  -webkit-text-stroke: 1px rgba(200, 255, 0, 0.25);
+/* Red-tinted stroked giant words (marquee / watermark). */
+.text-stroke-accent {
+  -webkit-text-stroke: 1px rgba(239, 11, 10, 0.25);
 }
 
 /* Hero grid texture — pointer-events-none, ~6% opacity.

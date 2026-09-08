@@ -280,7 +280,7 @@ export default function HangingContact() {
                   <span className="flex items-center gap-1">
                     {/* lime wax-seal dot: the availability signal */}
                     <motion.span
-                      className="h-1.5 w-1.5 rounded-full bg-[#c8ff00]"
+                      className="h-1.5 w-1.5 rounded-full bg-[#ef0b0a]"
                       style={{ boxShadow: "0 0 0 2px rgba(138,165,0,0.45)" }}
                       animate={{ opacity: [1, 0.4, 1] }}
                       transition={{ duration: 1.6, repeat: Infinity }}
@@ -318,7 +318,7 @@ export default function HangingContact() {
               {/* CTA + perforated stub with ink barcode */}
               <div className="relative z-10 space-y-2.5">
                 <span
-                  className="flex items-center justify-center gap-1.5 rounded-full bg-[#c8ff00] px-3 py-2 text-[11px] font-medium text-[#0a0a0f]"
+                  className="flex items-center justify-center gap-1.5 rounded-full bg-[#ef0b0a] px-3 py-2 text-[11px] font-medium text-white"
                   style={{
                     boxShadow:
                       "inset 0 1px 0 rgba(255,255,255,0.45), 0 1px 0 rgba(110,130,0,0.4), 0 6px 12px -6px rgba(120,150,0,0.5)",

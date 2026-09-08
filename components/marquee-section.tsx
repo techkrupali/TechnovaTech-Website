@@ -30,7 +30,7 @@ export default function MarqueeSection() {
           {[...half, ...half].map((word, i) => (
             <motion.span
               key={i}
-              className="relative mx-8 select-none font-serif text-6xl md:text-8xl font-normal text-foreground/10 transition-[color,-webkit-text-stroke] duration-500 hover:text-foreground/25 hover:[-webkit-text-stroke:1px_rgba(200,255,0,0.4)]"
+              className="relative mx-8 select-none font-serif text-6xl md:text-8xl font-normal text-foreground/10 transition-[color,-webkit-text-stroke] duration-500 hover:text-foreground/25 hover:[-webkit-text-stroke:1px_rgba(239,11,10,0.4)]"
               style={{ WebkitTextStroke: "1px rgba(0,0,0,0.1)" }}
               whileHover={reduce ? undefined : { scale: 1.04 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}
@@ -120,7 +120,7 @@ export function LargeTextMarquee({
           {items.map((item, i) => (
             <motion.span
               key={i}
-              className="mx-12 select-none font-serif text-6xl md:text-8xl font-bold text-transparent transition-[-webkit-text-stroke] duration-500 hover:[-webkit-text-stroke:1px_rgba(200,255,0,0.8)]"
+              className="mx-12 select-none font-serif text-6xl md:text-8xl font-bold text-transparent transition-[-webkit-text-stroke] duration-500 hover:[-webkit-text-stroke:1px_rgba(239,11,10,0.8)]"
               style={{ WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}
               whileHover={reduce ? undefined : { scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}

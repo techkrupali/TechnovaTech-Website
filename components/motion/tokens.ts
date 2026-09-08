@@ -18,11 +18,11 @@ export const DUR = { fast: 0.3, base: 0.6, slow: 0.8 } as const
 /** One stagger rhythm everywhere. */
 export const STAGGER = 0.06
 
-/** Signature brand accent — lime. Always wins ties. */
-export const ACCENT = "#c8ff00"
+/** Signature brand accent — the logo red. Always wins ties. */
+export const ACCENT = "#ef0b0a"
 
-/** The ONLY sanctioned complementary palette (amber / sky / emerald / violet). */
-export const ACCENTS = ["#f59e0b", "#38bdf8", "#34d399", "#a78bfa"] as const
+/** The ONLY sanctioned complementary palette (soft red / deep red / warm grey / graphite). */
+export const ACCENTS = ["#ff5a56", "#8c0605", "#9a9aa0", "#4a4a52"] as const
 
 /** Reserved spring for physical / playful pops (badges, mounts). */
 export const SPRING_POP = { type: "spring", stiffness: 400, damping: 20 } as const

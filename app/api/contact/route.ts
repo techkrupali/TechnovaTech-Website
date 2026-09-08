@@ -65,7 +65,7 @@ function confirmationHtml(f: Fields) {
         <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.2;color:#ffffff;">
           Technova <span style="font-style:italic;">Tech</span>
         </div>
-        <div style="width:28px;height:3px;background:#c8ff00;margin:12px 0 0;font-size:0;line-height:0;">&nbsp;</div>
+        <div style="width:28px;height:3px;background:#ef0b0a;margin:12px 0 0;font-size:0;line-height:0;">&nbsp;</div>
       </td>
     </tr>
 
@@ -99,7 +99,7 @@ function confirmationHtml(f: Fields) {
 
         <p style="margin:26px 0 0;font-size:14.5px;line-height:1.75;color:#444444;">
           Need us sooner? Reply straight to this email, or reach us on
-          <a href="https://wa.me/919316734210" style="color:#4d6b00;font-weight:bold;text-decoration:none;">WhatsApp</a>.
+          <a href="https://wa.me/919316734210" style="color:#b30d0b;font-weight:bold;text-decoration:none;">WhatsApp</a>.
         </p>
 
         <p style="margin:26px 0 0;font-size:14.5px;line-height:1.75;color:#444444;">

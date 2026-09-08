@@ -23,7 +23,7 @@ export function SiteTemplate({ profile: p }: { profile: SiteProfile }) {
     <main className="min-h-screen bg-white text-[#12131a] antialiased">
       {/* Honest preview ribbon */}
       <div className="bg-[#12131a] text-white text-center text-[11px] sm:text-xs px-4 py-2.5">
-        <span className="font-bold tracking-wide" style={{ color: "#c8ff00" }}>
+        <span className="font-bold tracking-wide" style={{ color: "#ef0b0a" }}>
           PREVIEW
         </span>{" "}
         <span className="text-white/75">

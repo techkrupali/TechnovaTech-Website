@@ -106,7 +106,7 @@ export function MagneticButton({
       }
       className={cn(
         "inline-flex items-center justify-center",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ff00] focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef0b0a] focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         disabled && "pointer-events-none opacity-60",
         className,
       )}

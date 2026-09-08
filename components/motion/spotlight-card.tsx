@@ -72,7 +72,7 @@ export function SpotlightCard({
       onMouseMove={handleMove}
       className={cn(
         "group relative overflow-hidden",
-        href && "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8ff00] focus-visible:ring-offset-2",
+        href && "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef0b0a] focus-visible:ring-offset-2",
         className,
       )}
       style={

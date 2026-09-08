@@ -40,7 +40,7 @@ export function GradientText({
 
   // Resolve the gradient stops per tone (caller overrides win).
   const f = from ?? (tone === "dark" ? "#ffffff" : "#1a1a1a")
-  const v = via ?? (tone === "dark" ? "rgba(255,255,255,0.78)" : "#4d6b00")
+  const v = via ?? (tone === "dark" ? "rgba(255,255,255,0.78)" : "#b30d0b")
   const t = to ?? (tone === "dark" ? "rgba(255,255,255,0.55)" : ACCENT)
 
   const doAnimate = animate && !reduce

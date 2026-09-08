@@ -93,7 +93,7 @@ export default function Footer() {
             .fill("TECHNOVA TECH")
             .map((item, i) => (
               <span key={i} className="text-sm font-bold uppercase tracking-[0.3em] mx-8 text-white/30">
-                {item} <span className="text-[#c8ff00]/50">★</span>
+                {item} <span className="text-[#ef0b0a]/50">★</span>
               </span>
             ))}
         </motion.div>
@@ -107,7 +107,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-6 group">
               <span className="relative text-3xl font-bold text-white">
                 Technova Tech
-                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#c8ff00] transition-transform duration-300 group-hover:scale-x-100" />
+                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#ef0b0a] transition-transform duration-300 group-hover:scale-x-100" />
               </span>
             </Link>
             <p className="text-white/50 mb-8 max-w-sm leading-relaxed">
@@ -122,7 +122,7 @@ export default function Footer() {
                   href="mailto:hello.technovatechnologies@gmail.com"
                   className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors"
                 >
-                  <Mail className="w-5 h-5 transition-colors group-hover:text-[#c8ff00]" />
+                  <Mail className="w-5 h-5 transition-colors group-hover:text-[#ef0b0a]" />
                   <span>hello.technovatechnologies@gmail.com</span>
                 </motion.a>
               </StaggerItem>
@@ -132,7 +132,7 @@ export default function Footer() {
                   transition={{ duration: DUR.fast, ease: EASE_OUT }}
                   className="group flex items-center gap-3 text-white/50"
                 >
-                  <Phone className="w-5 h-5 shrink-0 transition-colors group-hover:text-[#c8ff00]" />
+                  <Phone className="w-5 h-5 shrink-0 transition-colors group-hover:text-[#ef0b0a]" />
                   <span className="flex flex-wrap items-center gap-x-2">
                     <a href="tel:+919316734210" className="hover:text-white transition-colors whitespace-nowrap">
                       +91 93167 34210
@@ -164,7 +164,7 @@ export default function Footer() {
                   transition={{ duration: DUR.fast, ease: EASE_OUT }}
                   className="group flex items-start gap-3 text-white/50"
                 >
-                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#c8ff00]" />
+                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#ef0b0a]" />
                   <span>
                     <span className="block text-xs uppercase tracking-wider text-white/35">Head Office</span>
                     R.K. World Tower, Rajkot, Gujarat, India
@@ -177,7 +177,7 @@ export default function Footer() {
                   transition={{ duration: DUR.fast, ease: EASE_OUT }}
                   className="group flex items-start gap-3 text-white/50"
                 >
-                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#c8ff00]" />
+                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#ef0b0a]" />
                   <span>
                     <span className="block text-xs uppercase tracking-wider text-white/35">Ahmedabad Branch</span>
                     Titanium City Center Business Park, Ahmedabad, Gujarat 380015
@@ -190,7 +190,7 @@ export default function Footer() {
                   transition={{ duration: DUR.fast, ease: EASE_OUT }}
                   className="group flex items-start gap-3 text-white/50"
                 >
-                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#c8ff00]" />
+                  <MapPin className="w-5 h-5 mt-0.5 shrink-0 transition-colors group-hover:text-[#ef0b0a]" />
                   <span>
                     <span className="block text-xs uppercase tracking-wider text-white/35">Canada Office</span>
                     Dolphin Ave, Kelowna, BC V1Y 9J7, Canada
@@ -215,7 +215,7 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-1.5 text-white/50 hover:text-white transition-colors"
                     >
-                      <span className="h-px w-0 bg-[#c8ff00] transition-all duration-300 group-hover:w-3" />
+                      <span className="h-px w-0 bg-[#ef0b0a] transition-all duration-300 group-hover:w-3" />
                       {link.label}
                     </Link>
                   </motion.span>
@@ -238,7 +238,7 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-1.5 text-white/50 hover:text-white transition-colors"
                     >
-                      <span className="h-px w-0 bg-[#c8ff00] transition-all duration-300 group-hover:w-3" />
+                      <span className="h-px w-0 bg-[#ef0b0a] transition-all duration-300 group-hover:w-3" />
                       {link.label}
                     </Link>
                   </motion.span>

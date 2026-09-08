@@ -107,7 +107,7 @@ export default function ProductsSection() {
                   </motion.span>
 
                   <motion.span
-                    className="text-sm text-white/40 font-mono lg:w-16 transition-colors duration-300 group-hover:text-[#c8ff00]"
+                    className="text-sm text-white/40 font-mono lg:w-16 transition-colors duration-300 group-hover:text-[#ef0b0a]"
                     whileHover={reduce ? undefined : { scale: 1.2 }}
                     transition={SPRING_POP}
                   >
@@ -115,7 +115,7 @@ export default function ProductsSection() {
                   </motion.span>
 
                   <div className="flex-1">
-                    <h3 className="relative inline-flex items-center text-2xl md:text-4xl font-serif text-white mb-4 transition-colors duration-500 group-hover:text-[#c8ff00]">
+                    <h3 className="relative inline-flex items-center text-2xl md:text-4xl font-serif text-white mb-4 transition-colors duration-500 group-hover:text-[#ef0b0a]">
                       <motion.span
                         className="inline-flex items-center gap-3"
                         whileHover={reduce ? undefined : { x: 10 }}
@@ -131,7 +131,7 @@ export default function ProductsSection() {
                   {/* The whole row is the Link (SpotlightCard) — this round
                       arrow is a decorative affordance whose hover state is
                       carried by the parent `group` (no nested anchor). */}
-                  <span className="shrink-0 relative inline-flex items-center justify-center w-14 h-14 rounded-full border border-white/20 text-white overflow-hidden transition-colors duration-300 group-hover:bg-[#c8ff00] group-hover:border-[#c8ff00] group-hover:text-black">
+                  <span className="shrink-0 relative inline-flex items-center justify-center w-14 h-14 rounded-full border border-white/20 text-white overflow-hidden transition-colors duration-300 group-hover:bg-[#ef0b0a] group-hover:border-[#ef0b0a] group-hover:text-white">
                     <ShineOverlay trigger="hover" tone="dark" className="rounded-full" />
                     <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-300 ease-out group-hover:rotate-45" />
                   </span>

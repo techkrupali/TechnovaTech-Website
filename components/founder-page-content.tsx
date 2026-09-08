@@ -296,7 +296,7 @@ export default function FounderPageContent() {
                 <motion.span
                   whileHover={reduce ? undefined : { scale: 1.1, y: -5 }}
                   transition={{ type: SPRING_POP.type, stiffness: SPRING_POP.stiffness, damping: SPRING_POP.damping }}
-                  className="group relative inline-flex overflow-hidden px-4 py-2 rounded-full bg-card border border-border text-sm hover:border-[#c8ff00]/50 transition-colors cursor-default text-foreground"
+                  className="group relative inline-flex overflow-hidden px-4 py-2 rounded-full bg-card border border-border text-sm hover:border-[#ef0b0a]/50 transition-colors cursor-default text-foreground"
                 >
                   <ShineOverlay trigger="hover" tone="light" className="rounded-full" />
                   <span className="relative z-10">{skill}</span>

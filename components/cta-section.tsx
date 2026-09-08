@@ -93,7 +93,7 @@ export default function CTASection() {
               <MagneticButton
                 as={Link}
                 href="/contact"
-                className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-lime font-medium"
+                className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-accent font-medium"
               >
                 <ShineOverlay trigger="hover" tone="dark" />
                 <span className="relative z-10">Start Your Project</span>
@@ -102,7 +102,7 @@ export default function CTASection() {
               <MagneticButton
                 as={Link}
                 href="/contact"
-                className="group relative overflow-hidden inline-flex items-center justify-center w-14 h-14 rounded-full btn-lime"
+                className="group relative overflow-hidden inline-flex items-center justify-center w-14 h-14 rounded-full btn-accent"
               >
                 <ShineOverlay trigger="hover" tone="dark" />
                 <motion.span

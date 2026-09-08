@@ -94,7 +94,7 @@ export default function HeroSection() {
       <motion.span
         aria-hidden
         style={reduce ? undefined : { y: fastY }}
-        className="text-stroke-lime absolute -bottom-12 left-1/2 -translate-x-1/2 select-none pointer-events-none whitespace-nowrap font-serif text-[20vw] leading-none font-bold text-transparent opacity-40"
+        className="text-stroke-accent absolute -bottom-12 left-1/2 -translate-x-1/2 select-none pointer-events-none whitespace-nowrap font-serif text-[20vw] leading-none font-bold text-transparent opacity-40"
       >
         TECHNOVA
       </motion.span>
@@ -139,7 +139,7 @@ export default function HeroSection() {
               <MagneticButton
                 as={Link}
                 href="/contact"
-                className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-lime font-medium text-sm"
+                className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-4 rounded-full btn-accent font-medium text-sm"
               >
                 <ShineOverlay trigger="hover" tone="dark" />
                 <span className="relative z-10">Start Your Project</span>

@@ -43,7 +43,7 @@ export default async function LeadDemoPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 pb-24">
       <div className="bg-slate-900 text-white text-center text-xs sm:text-sm px-4 py-2.5">
-        <span className="font-semibold" style={{ color: "#c8ff00" }}>
+        <span className="font-semibold" style={{ color: "#ef0b0a" }}>
           PREVIEW
         </span>{" "}
         — built by Technova Tech for {demo.name}. Your real prices &amp; reviews go here. Live in 48h, $299 one-time.{" "}
@@ -141,7 +141,7 @@ export default async function LeadDemoPage({ params }: { params: Promise<{ slug:
           <Link
             href="/contact"
             className="inline-block px-6 py-3 rounded-full font-semibold text-sm text-black"
-            style={{ backgroundColor: "#c8ff00" }}
+            style={{ backgroundColor: "#ef0b0a" }}
           >
             Yes — make this real for {demo.name}
           </Link>
