@@ -194,11 +194,10 @@ export default function AboutPageContent() {
         </div>
       </section>
 
-      {/* Running Strip */}
-      <RunningStrip text="INNOVATION • QUALITY • EXCELLENCE • GROWTH" speed={25} />
-
-      {/* Mission & Vision — a typographic diptych: the statements ARE the design */}
-      <section ref={mvRef} className="py-28 bg-background relative overflow-hidden">
+      {/* Mission & Vision — a typographic diptych: the statements ARE the design.
+          Sits directly under the hero (the running strip that used to separate
+          them was removed on request). */}
+      <section ref={mvRef} className="pb-28 pt-4 bg-background relative overflow-hidden">
         <GlowOrb color={ACCENT} size={460} opacity={0.1} parallax={mvOrbY} className="top-1/3 -right-40" />
 
         <div className="container mx-auto px-6 relative z-10">
