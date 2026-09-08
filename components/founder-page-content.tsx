@@ -204,9 +204,6 @@ export default function FounderPageContent() {
         </div>
       </section>
 
-      {/* Running Strip */}
-      <RunningStrip text="FULL-STACK • AI • SAAS • ENTERPRISE" speed={25} />
-
       {/* Bio Section */}
       <section className="py-20 relative bg-background">
         <div className="container mx-auto px-6">
