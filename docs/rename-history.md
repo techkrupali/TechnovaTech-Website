@@ -16,4 +16,6 @@ Renaming text in this repo cannot move these; each needs its own migration:
 | `lib/email-signature.ts`, `public/email-signature.html`, `data/agency.json`, demo pages | `https://madvision.tech` site/asset URLs (incl. hosted `logo-mark.gif` / `logo.jpg`) | swap once the new domain is registered and assets are re-hosted |
 | `lib/email-signature.ts`, `public/email-signature.html` | `https://www.instagram.com/madvisiontech/` | swap once the new Instagram handle exists |
 | `README.md` | Vercel project URL `v0-vision-tech-website` | rename the Vercel project, then update the link |
-| several pages / templates | `madevisionstudios@gmail.com` contact email | replace when a new address is ready |
+
+2026-09-08 — contact details updated: email is now `hello.technovatechnologies@gmail.com`,
+phone/WhatsApp is `+91 93167 34210`. Office addresses unchanged.

@@ -57,10 +57,10 @@ export default function TermsOfService() {
           
           <h2 className="text-2xl font-semibold mb-4 text-foreground">13. Grievance Officer</h2>
           <p className="text-muted-foreground mb-4">For complaints or grievances:</p>
-          <p className="text-muted-foreground mb-6">Name: Grievance Officer<br/>Email: madevisionstudios@gmail.com<br/>Phone: +91 83206 93440<br/>Response time: 72 hours</p>
+          <p className="text-muted-foreground mb-6">Name: Grievance Officer<br/>Email: hello.technovatechnologies@gmail.com<br/>Phone: +91 93167 34210<br/>Response time: 72 hours</p>
           
           <h2 className="text-2xl font-semibold mb-4 text-foreground">14. Contact Information</h2>
-          <p className="text-muted-foreground">Technova Tech<br/>Email: madevisionstudios@gmail.com<br/>Phone: +91 83206 93440<br/>Head Office: R.K. World Tower, Rajkot, Gujarat, India<br/>Ahmedabad Branch: Titanium City Center Business Park, Ahmedabad, Gujarat 380015<br/>Business Hours: 9 AM - 6 PM IST</p>
+          <p className="text-muted-foreground">Technova Tech<br/>Email: hello.technovatechnologies@gmail.com<br/>Phone: +91 93167 34210<br/>Head Office: R.K. World Tower, Rajkot, Gujarat, India<br/>Ahmedabad Branch: Titanium City Center Business Park, Ahmedabad, Gujarat 380015<br/>Business Hours: 9 AM - 6 PM IST</p>
         </div>
       </div>
     </div>

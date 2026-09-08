@@ -36,14 +36,14 @@ const contactInfo: ContactInfo[] = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "madevisionstudios@gmail.com",
-    href: "mailto:madevisionstudios@gmail.com",
+    value: "hello.technovatechnologies@gmail.com",
+    href: "mailto:hello.technovatechnologies@gmail.com",
   },
   {
     icon: Phone,
     title: "Call Us",
-    value: "+91 83206 93440",
-    href: "tel:+918320693440",
+    value: "+91 93167 34210",
+    href: "tel:+919316734210",
   },
 ]
 
@@ -61,8 +61,8 @@ const offices: Office[] = [
     label: "Head Office",
     lines: ["R.K. World Tower", "Rajkot, Gujarat, India"],
     phoneLabel: "Call / WhatsApp",
-    phoneDisplay: "+91 83206 93440",
-    phoneHref: "https://wa.me/918320693440",
+    phoneDisplay: "+91 93167 34210",
+    phoneHref: "https://wa.me/919316734210",
     mapQuery: "R.K. World Tower, Rajkot, Gujarat",
   },
   {
@@ -482,10 +482,10 @@ export default function ContactPageContent() {
               <SpotlightCard tone="light" className="mt-2 p-6 rounded-2xl bg-card border border-border">
                 <p className="relative z-10 text-sm text-muted-foreground mb-2">Prefer to email directly?</p>
                 <a
-                  href="mailto:madevisionstudios@gmail.com"
+                  href="mailto:hello.technovatechnologies@gmail.com"
                   className="relative z-10 text-foreground font-medium flex items-center gap-2 hover:gap-3 transition-all"
                 >
-                  madevisionstudios@gmail.com
+                  hello.technovatechnologies@gmail.com
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </SpotlightCard>

@@ -119,11 +119,11 @@ export default function Footer() {
                 <motion.a
                   whileHover={{ x: 5 }}
                   transition={{ duration: DUR.fast, ease: EASE_OUT }}
-                  href="mailto:madevisionstudios@gmail.com"
+                  href="mailto:hello.technovatechnologies@gmail.com"
                   className="group flex items-center gap-3 text-white/50 hover:text-white transition-colors"
                 >
                   <Mail className="w-5 h-5 transition-colors group-hover:text-[#c8ff00]" />
-                  <span>madevisionstudios@gmail.com</span>
+                  <span>hello.technovatechnologies@gmail.com</span>
                 </motion.a>
               </StaggerItem>
               <StaggerItem as="div" y={12}>
@@ -134,8 +134,8 @@ export default function Footer() {
                 >
                   <Phone className="w-5 h-5 shrink-0 transition-colors group-hover:text-[#c8ff00]" />
                   <span className="flex flex-wrap items-center gap-x-2">
-                    <a href="tel:+918320693440" className="hover:text-white transition-colors whitespace-nowrap">
-                      +91 83206 93440
+                    <a href="tel:+919316734210" className="hover:text-white transition-colors whitespace-nowrap">
+                      +91 93167 34210
                     </a>
                     <span className="text-white/25">&middot;</span>
                     <a

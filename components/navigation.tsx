@@ -310,10 +310,10 @@ export default function Navigation() {
                 >
                   <p className="text-sm text-background/40 mb-2">Get in touch</p>
                   <a
-                    href="mailto:madevisionstudios@gmail.com"
+                    href="mailto:hello.technovatechnologies@gmail.com"
                     className="text-background/80 dark:text-foreground/80 hover:text-background transition-colors text-lg"
                   >
-                    madevisionstudios@gmail.com
+                    hello.technovatechnologies@gmail.com
                   </a>
                 </motion.div>
               </div>

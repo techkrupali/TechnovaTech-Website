@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import * as nodemailer from 'nodemailer'
 import { signatureAttachments, signatureHtml, signatureText } from '@/lib/email-signature'
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'madevisionstudios@gmail.com'
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'hello.technovatechnologies@gmail.com'
 
 /* The <select> posts a short code — map it back to the human label so both
    the notification and the visitor's confirmation read properly. */
@@ -99,7 +99,7 @@ function confirmationHtml(f: Fields) {
 
         <p style="margin:26px 0 0;font-size:14.5px;line-height:1.75;color:#444444;">
           Need us sooner? Reply straight to this email, or reach us on
-          <a href="https://wa.me/918320693440" style="color:#4d6b00;font-weight:bold;text-decoration:none;">WhatsApp</a>.
+          <a href="https://wa.me/919316734210" style="color:#4d6b00;font-weight:bold;text-decoration:none;">WhatsApp</a>.
         </p>
 
         <p style="margin:26px 0 0;font-size:14.5px;line-height:1.75;color:#444444;">
@@ -147,7 +147,7 @@ function confirmationText(f: Fields) {
     f.service ? `Service: ${f.service}` : '',
     `Message: ${f.message}`,
     '',
-    'Need us sooner? Reply straight to this email, or WhatsApp +91 83206 93440.',
+    'Need us sooner? Reply straight to this email, or WhatsApp +91 93167 34210.',
     '',
     'Warm regards,',
     '',

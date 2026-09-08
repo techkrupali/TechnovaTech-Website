@@ -62,8 +62,8 @@ const LOGO_GIF_BASE64 =
 /* ---- the facts, in one place ---- */
 export const COMPANY = "Technova Tech"
 export const TAGLINE = "Turning Vision Into Innovation"
-export const PHONE_DISPLAY = "+91 83206 93440"
-export const PHONE_TEL = "+918320693440"
+export const PHONE_DISPLAY = "+91 93167 34210"
+export const PHONE_TEL = "+919316734210"
 export const SITE = "https://madvision.tech"
 /** Company Instagram profile. Set empty to fall back to a plain website link. */
 export const INSTAGRAM = "https://www.instagram.com/madvisiontech/"
@@ -81,7 +81,7 @@ export type Signer = { name: string; role: string; email: string }
 export const FOUNDER: Signer = {
   name: "Vivek Vora",
   role: "Founder & CEO",
-  email: process.env.CONTACT_EMAIL || "madevisionstudios@gmail.com",
+  email: process.env.CONTACT_EMAIL || "hello.technovatechnologies@gmail.com",
 }
 
 /** The attachment that carries the logo. Spread into nodemailer sendMail(). */

@@ -44,7 +44,7 @@ async function appendToSent(mail: MailOptions): Promise<boolean> {
       host: process.env.IMAP_HOST || "imap.titan.email",
       port: Number(process.env.IMAP_PORT || 993),
       secure: true,
-      auth: { user: process.env.SMTP_USER || "madevisionstudios@gmail.com", pass: process.env.SMTP_PASS as string },
+      auth: { user: process.env.SMTP_USER || "hello.technovatechnologies@gmail.com", pass: process.env.SMTP_PASS as string },
       logger: false,
     })
     await withTimeout(client.connect(), 8000)
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 })
   }
 
-  const smtpUser = process.env.SMTP_USER || "madevisionstudios@gmail.com"
+  const smtpUser = process.env.SMTP_USER || "hello.technovatechnologies@gmail.com"
   // the drafted pitch stays exactly as written; the house signature is appended
   const bodyHtml = lead.pitchEmailBody
     .replace(/&/g, "&amp;")
