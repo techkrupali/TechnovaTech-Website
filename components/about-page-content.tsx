@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
-import { Target, Eye, Heart, Users, Award, Rocket, MapPin, ArrowRight } from "lucide-react"
+import { Target, Eye, Heart, Users, Rocket, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useRef, type RefObject } from "react"
 import { RunningStrip, LargeTextMarquee } from "./marquee-section"
@@ -20,7 +20,6 @@ import {
   GlowOrb,
   AmbientShape,
   AnimatedDivider,
-  CountUp,
   useParallax,
 } from "@/components/motion"
 
@@ -421,55 +420,6 @@ export default function AboutPageContent() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Team Stats */}
-      <section className="py-24 bg-secondary/30">
-        <div className="container mx-auto px-6">
-          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StaggerItem>
-              <SpotlightCard tone="light" className="h-full text-center p-10 rounded-3xl bg-card border border-border">
-                <motion.div
-                  whileHover={reduceMotion ? undefined : { rotate: 360 }}
-                  transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                  className="w-16 h-16 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mx-auto mb-6"
-                >
-                  <Users className="w-8 h-8 text-background dark:text-foreground" />
-                </motion.div>
-                <CountUp value={14} suffix="+" className="block text-5xl font-serif text-foreground mb-2" />
-                <p className="text-muted-foreground text-lg">Team Members</p>
-              </SpotlightCard>
-            </StaggerItem>
-
-            <StaggerItem>
-              <SpotlightCard tone="light" className="h-full text-center p-10 rounded-3xl bg-card border border-border">
-                <motion.div
-                  whileHover={reduceMotion ? undefined : { rotate: 360 }}
-                  transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                  className="w-16 h-16 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mx-auto mb-6"
-                >
-                  <Award className="w-8 h-8 text-background dark:text-foreground" />
-                </motion.div>
-                <CountUp value={5} suffix="+" className="block text-5xl font-serif text-foreground mb-2" />
-                <p className="text-muted-foreground text-lg">Years Experience</p>
-              </SpotlightCard>
-            </StaggerItem>
-
-            <StaggerItem>
-              <SpotlightCard tone="light" className="h-full text-center p-10 rounded-3xl bg-card border border-border">
-                <motion.div
-                  whileHover={reduceMotion ? undefined : { rotate: 360 }}
-                  transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                  className="w-16 h-16 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mx-auto mb-6"
-                >
-                  <MapPin className="w-8 h-8 text-background dark:text-foreground" />
-                </motion.div>
-                <div className="text-2xl font-medium text-foreground mb-2">Rajkot &middot; Ahmedabad</div>
-                <p className="text-muted-foreground text-lg">Head Office &amp; Branch</p>
-              </SpotlightCard>
-            </StaggerItem>
-          </Stagger>
         </div>
       </section>
 
