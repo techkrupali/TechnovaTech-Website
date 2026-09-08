@@ -392,27 +392,62 @@ export default function FounderPageContent() {
         />
 
         <div className="container mx-auto px-6 relative z-10">
-          <Reveal className="max-w-3xl mx-auto">
-            <SpotlightCard
-              tone="light"
-              lift={-6}
-              className="text-center p-10 rounded-3xl bg-card border border-border"
-            >
-              <motion.div
-                whileHover={reduce ? undefined : { rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.5, ease: EASE_OUT }}
-                className="relative z-10 w-16 h-16 rounded-2xl bg-foreground dark:bg-card flex items-center justify-center mx-auto mb-6"
-              >
-                <Award className="w-8 h-8 text-background dark:text-foreground" />
-              </motion.div>
-              <h2 className="relative z-10 text-3xl font-serif mb-6 text-foreground">Key Achievement</h2>
-              <p className="relative z-10 text-lg text-muted-foreground leading-relaxed">
-                Founded Technova Tech and delivered scalable digital solutions across multiple industries including retail,
-                services, and SMBs. Leading a team of 14+ professionals to build enterprise-grade products that serve
-                thousands of users daily.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center border-y border-border py-14">
+            {/* ---------- the statement ---------- */}
+            <Reveal y={24} className="lg:col-span-7">
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
+                  01
+                </span>
+                <span className="h-px w-10 bg-border" aria-hidden />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                  Key Achievement
+                </span>
+                <Award className="ml-auto h-4 w-4 text-muted-foreground" aria-hidden />
+              </div>
+
+              <p className="mt-8 font-serif text-2xl md:text-[1.75rem] leading-[1.45] text-foreground max-w-xl">
+                Founded Technova Tech in 2019 and grew it from a single laptop in Rajkot
+                into a{" "}
+                <em className="not-italic font-serif italic" style={{ color: ACCENT }}>
+                  product company
+                </em>{" "}
+                — platforms in production, work shipped across six countries, and a team
+                building daily.
               </p>
-            </SpotlightCard>
-          </Reveal>
+
+              <p className="mt-6 text-muted-foreground leading-relaxed max-w-xl">
+                Enterprise-grade products serving{" "}
+                <span className="text-foreground font-medium">thousands of users every day</span> —
+                on retail counters, workshop floors and study desks — across retail,
+                services and growing SMBs.
+              </p>
+            </Reveal>
+
+            {/* ---------- the proof, as a ledger ---------- */}
+            <Stagger className="lg:col-span-5">
+              {[
+                { label: "Products live", value: "02 platforms" },
+                { label: "Delivered", value: "50+ projects" },
+                { label: "Team", value: "14+ specialists" },
+                { label: "Countries", value: "06 served" },
+              ].map((fact, i) => (
+                <StaggerItem key={fact.label}>
+                  <div className="flex items-baseline gap-5 border-t border-border py-4 first:border-t-0">
+                    <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground w-28 shrink-0">
+                      {fact.label}
+                    </span>
+                    <span className="ml-auto text-right font-serif text-xl md:text-2xl text-foreground">
+                      {fact.value}
+                    </span>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
 
