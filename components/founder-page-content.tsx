@@ -4,7 +4,7 @@ import { useRef, type RefObject } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { Code2, Cloud, Brain, Shield, Layers, Linkedin, Mail, Award, Briefcase, GraduationCap, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { RunningStrip, LargeTextMarquee } from "./marquee-section"
+import { LargeTextMarquee } from "./marquee-section"
 import {
   ACCENT,
   ACCENTS,
