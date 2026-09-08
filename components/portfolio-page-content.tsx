@@ -404,8 +404,6 @@ export default function PortfolioPageContent() {
         </div>
       </section>
 
-      <RunningStrip text="RETAILIANS POS • 911 WRAP ERP • DSAT GURU" speed={25} />
-
       {/* ---------- index of entries ---------- */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
