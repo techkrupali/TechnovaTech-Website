@@ -59,7 +59,7 @@ export default function Navigation() {
               {/* Logo - top left */}
               <Link href="/" className="relative z-10">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex items-center gap-2">
-                  <Logo size={56} animate />
+                  <Logo size={44} animate />
                 </motion.div>
               </Link>
 
