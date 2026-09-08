@@ -131,6 +131,7 @@ const projects: Project[] = [
   },
   {
     name: "911 Wrap ERP",
+    image: "/projects/911wraperp.png",
     category: "SaaS & ERP",
     about:
       "End-to-end ERP for automobile dealerships and wrap studios — orders, jobs, inventory and profit analytics in one place.",
