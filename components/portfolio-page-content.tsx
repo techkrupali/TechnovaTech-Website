@@ -119,6 +119,8 @@ type Project = {
   secondCta?: string
   /** square logo/icon in public/projects; cards fall back to an initials tile */
   image?: string
+  /** corner tag on the card, e.g. "Ongoing" */
+  badge?: string
 }
 
 const projects: Project[] = [
@@ -325,6 +327,24 @@ const projects: Project[] = [
       "Community-driven open platform",
     ],
     href: "https://apps.apple.com/in/app/yatri-ride-booking-app/id1615871038",
+    cta: "App Store",
+  },
+  {
+    name: "Blossom — AI Plant Identifier",
+    image: "/projects/blossom.jpg",
+    category: "AI Tools",
+    badge: "Ongoing",
+    about:
+      "Snap a photo and know the plant \u2014 Blossom identifies species instantly with AI, then guides the care: watering, light, pruning and health diagnoses, plant by plant.",
+    features: [
+      "Instant AI plant identification",
+      "Personalised care schedules",
+      "Watering & light reminders",
+      "Disease & health diagnosis",
+      "Detailed care guides",
+      "Track your plant collection",
+    ],
+    href: "https://apps.apple.com/in/app/blossom-ai-plant-identifier/id1487453649",
     cta: "App Store",
   },
   {
@@ -771,6 +791,14 @@ export default function PortfolioPageContent() {
                 className="bg-background border-b border-r border-border"
               >
                 <div className="group relative flex h-full flex-col overflow-hidden bg-background p-8 transition-colors duration-500 hover:bg-secondary/40">
+                  {project.badge && (
+                    <span
+                      className="absolute right-0 top-0 px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white"
+                      style={{ backgroundColor: ACCENT }}
+                    >
+                      {project.badge}
+                    </span>
+                  )}
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
                       {String(i + 1).padStart(2, "0")}
