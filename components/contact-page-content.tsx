@@ -252,9 +252,9 @@ export default function ContactPageContent() {
       <section className="py-20 relative overflow-hidden bg-background">
         <GlowOrb color={ACCENT} size={420} opacity={0.08} className="top-1/3 -left-32" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 border-t border-border pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* ---------- form ---------- */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 border border-border p-8 md:p-10">
               <Reveal y={16} className="flex items-center gap-4 mb-10">
                 <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
                   01
@@ -412,7 +412,7 @@ export default function ContactPageContent() {
             </div>
 
             {/* ---------- why work with us, as working rules ---------- */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 border border-border p-8 md:p-10">
               <Reveal y={16} className="flex items-center gap-4 mb-10">
                 <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
                   02
