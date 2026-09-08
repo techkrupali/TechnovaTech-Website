@@ -4,9 +4,9 @@ import Footer from "@/components/footer"
 import FounderPageContent from "@/components/founder-page-content"
 
 export const metadata: Metadata = {
-  title: "Vivek Vora - Founder | Technova Tech",
+  title: "Krupali Vekariya - Founder | Technova Tech",
   description:
-    "Meet Vivek Vora, the Founder & CEO of Technova Tech. A Full-Stack Developer specializing in building smart, scalable digital solutions.",
+    "Meet Krupali Vekariya, the Founder & CEO of Technova Tech. A Full-Stack Developer specializing in building smart, scalable digital solutions.",
 }
 
 export default function FounderPage() {

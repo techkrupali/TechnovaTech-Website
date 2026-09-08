@@ -6,7 +6,7 @@ etle ek var manually banavvi padse. 2 minute nu kaam che:
 1. Go to **https://claude.ai/code/routines** → New routine
 2. Name: `daily-agency-cycle`
 3. Schedule: daily at **8:00 AM IST** (= `30 2 * * *` UTC cron)
-4. Repository: `techvivek32/madvision.tech`
+4. Repository: `techkrupali/TechnovaTech-Website`
 5. Paste the prompt below as the agent's instructions:
 
 ---
@@ -43,7 +43,7 @@ Mission Control dashboard (the site auto-syncs it into live storage after each d
    Note each lead's timezone so the founder pitches in their business hours.
 
 3. PITCH DRAFTS: Every lead by definition now has a reachable channel. Draft pitchEmailSubject + pitchEmailBody
-   (120-180 words, from Vivek Vora, Founder & CEO, Technova Tech, hello.technovatechnologies@gmail.com; something
+   (120-180 words, from Krupali Vekariya, Founder & CEO, Technova Tech, hello.technovatechnologies@gmail.com; something
    specific about their business; one clear offer with price; one CTA; polite opt-out line) and
    pitchWhatsApp (2-3 sentences). Canada leads: CASL-compliant tone — identify sender, mention the
    Kelowna BC office (Dolphin Ave, Kelowna, BC V1Y 9J7), easy opt-out.

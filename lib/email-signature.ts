@@ -67,8 +67,8 @@ export const PHONE_TEL = "+919316734210"
 export const SITE = "https://madvision.tech"
 /** Company Instagram profile. Set empty to fall back to a plain website link. */
 export const INSTAGRAM = "https://www.instagram.com/madvisiontech/"
-export const LINKEDIN = "https://www.linkedin.com/in/vivek-tech32/"
-export const GITHUB = "https://github.com/techvivek32"
+export const LINKEDIN = "https://www.linkedin.com/in/krupali-vekariya-671855269/"
+export const GITHUB = "https://github.com/techkrupali"
 
 export const OFFICES = [
   ["Head Office", "R.K. World Tower, Rajkot, Gujarat, India"],
@@ -79,7 +79,7 @@ export const OFFICES = [
 export type Signer = { name: string; role: string; email: string }
 
 export const FOUNDER: Signer = {
-  name: "Vivek Vora",
+  name: "Krupali Vekariya",
   role: "Founder & CEO",
   email: process.env.CONTACT_EMAIL || "hello.technovatechnologies@gmail.com",
 }

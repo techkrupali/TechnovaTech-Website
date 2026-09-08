@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
     .replace(/\n/g, "<br/>")
 
   const mail: MailOptions = {
-    from: `"Vivek Vora — Technova Tech" <${smtpUser}>`,
+    from: `"Krupali Vekariya — Technova Tech" <${smtpUser}>`,
     to: lead.email,
     subject: lead.pitchEmailSubject,
     text: `${lead.pitchEmailBody}\n\n${signatureText()}`,

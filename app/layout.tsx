@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Technova Tech delivers advanced AI-powered SaaS products and enterprise-grade ERP systems designed for modern businesses.",
   keywords: ["AI Solutions", "SaaS Development", "ERP Systems", "Web Development", "Mobile Apps", "Cloud DevOps"],
-  authors: [{ name: "Vivek Vora", url: "https://technovatech.com" }],
+  authors: [{ name: "Krupali Vekariya", url: "https://technovatech.com" }],
   creator: "Technova Tech",
     generator: 'v0.app'
 }
