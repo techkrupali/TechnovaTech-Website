@@ -2,7 +2,7 @@
 
 import { useRef, type RefObject } from "react"
 import { motion, useReducedMotion } from "framer-motion"
-import { Code2, Cloud, Brain, Shield, Layers, Mail, Award, Briefcase, GraduationCap, ArrowRight } from "lucide-react"
+import { Code2, Cloud, Brain, Shield, Layers, Linkedin, Mail, Award, Briefcase, GraduationCap, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { RunningStrip, LargeTextMarquee } from "./marquee-section"
 import {
@@ -128,7 +128,7 @@ export default function FounderPageContent() {
               </Reveal>
 
               <h1 className="text-4xl md:text-6xl font-serif mt-4 mb-4 text-foreground">
-                <RevealText as="span" by="word" text="Vivek Vora" delay={0.1} className="inline-block" />
+                <RevealText as="span" by="word" text="Krupali Vekariya" delay={0.1} className="inline-block" />
               </h1>
 
               <Reveal as="p" y={16} delay={0.25} className="text-xl text-muted-foreground mb-6">
@@ -141,8 +141,10 @@ export default function FounderPageContent() {
                 delay={0.35}
                 className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto"
               >
-                Empowering businesses with custom-built apps and high-performance solutions. I help businesses transform
-                their operations by creating custom apps, high-performance systems, and modern technology workflows.
+                I build the technology businesses run on — custom apps, high-performance
+                platforms and modern workflows that turn everyday operations into a
+                competitive edge. From the first idea to the version your customers use,
+                one accountable pair of hands.
               </Reveal>
 
               <Stagger delayChildren={0.45} className="flex flex-wrap justify-center gap-4 mb-8">
@@ -170,7 +172,7 @@ export default function FounderPageContent() {
                 </StaggerItem>
               </Stagger>
 
-              <Reveal y={16} delay={0.6}>
+              <Reveal y={16} delay={0.6} className="flex flex-wrap items-center justify-center gap-3">
                 <MagneticButton
                   as={Link}
                   href="mailto:hello.technovatechnologies@gmail.com"
@@ -180,6 +182,20 @@ export default function FounderPageContent() {
                   <ShineOverlay trigger="hover" tone="dark" className="rounded-full" />
                   <Mail className="relative z-10 w-4 h-4" />
                   <span className="relative z-10">Get in Touch</span>
+                  <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </MagneticButton>
+                <MagneticButton
+                  as="a"
+                  href="https://www.linkedin.com/in/krupali-vekariya-671855269/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  accent={ACCENT}
+                  glow={false}
+                  className="group relative overflow-hidden gap-2 px-6 py-3 rounded-full border border-border bg-card text-foreground font-medium"
+                >
+                  <ShineOverlay trigger="hover" tone="light" className="rounded-full" />
+                  <Linkedin className="relative z-10 w-4 h-4" style={{ color: ACCENT }} />
+                  <span className="relative z-10">LinkedIn</span>
                   <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </MagneticButton>
               </Reveal>
@@ -207,10 +223,10 @@ export default function FounderPageContent() {
                 <h2 className="text-2xl font-serif text-foreground">About Me</h2>
               </div>
               <p className="relative z-10 text-lg text-muted-foreground leading-relaxed">
-                {`I'm Vivek Vora, a Full-Stack Developer and Founder of Technova Tech, specializing in building smart,
-                scalable digital solutions. I help businesses transform their operations by creating custom apps,
-                high-performance systems, and modern technology workflows. With a deep focus on quality, automation, and
-                user-centric design, I turn ideas into powerful products that drive real growth.`}
+                {`I'm Krupali Vekariya, a Full-Stack Developer and Founder of Technova Tech. I specialise in smart,
+                scalable digital solutions — custom apps, high-performance systems, and modern technology workflows
+                that transform how businesses operate. With a deep focus on quality, automation, and user-centric
+                design, I turn ideas into products that drive real growth.`}
               </p>
             </SpotlightCard>
           </Reveal>
