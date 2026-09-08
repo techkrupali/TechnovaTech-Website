@@ -262,6 +262,22 @@ const projects: Project[] = [
     secondCta: "Google Play",
   },
   {
+    name: "Urban Company \u2014 App Concept",
+    category: "UI/UX Design",
+    about:
+      "End-to-end UI/UX design exploration of the Urban Company service-booking experience \u2014 every screen from discovery to checkout, designed in Figma with a reusable component system.",
+    features: [
+      "Complete booking-flow screens",
+      "Reusable component library",
+      "Consistent spacing & type scale",
+      "Clickable Figma prototype",
+      "Mobile-first layouts",
+      "Light, conversion-led visual style",
+    ],
+    href: "https://www.figma.com/design/3orvGYllOQMIINQWToI3Ua/Urban-company-practice-file--Community-?node-id=0-1",
+    cta: "View in Figma",
+  },
+  {
     name: "Healthengine",
     image: "/projects/healthengine.png",
     category: "Health & Fitness",
@@ -422,6 +438,7 @@ const projectCategories = [
   "SaaS & ERP",
   "E-commerce",
   "Custom Software",
+  "UI/UX Design",
   "Education",
   "Health & Fitness",
   "Productivity",
