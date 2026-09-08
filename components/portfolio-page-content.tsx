@@ -278,6 +278,22 @@ const projects: Project[] = [
     cta: "View in Figma",
   },
   {
+    name: "Pet Care \u2014 Mobile App Design",
+    category: "UI/UX Design",
+    about:
+      "UI/UX design for a pet-care companion app \u2014 booking vets and groomers, tracking vaccinations and daily care, all designed in Figma as a warm, friendly mobile experience.",
+    features: [
+      "Onboarding & pet profiles",
+      "Vet & grooming booking flows",
+      "Vaccination & care reminders",
+      "Reusable component library",
+      "Clickable Figma prototype",
+      "Playful, pet-friendly visual style",
+    ],
+    href: "https://www.figma.com/design/hj5klmNphlN9FRNTtf63R3/Pet-Care---Mobile-App--Community-?node-id=0-1",
+    cta: "View in Figma",
+  },
+  {
     name: "Healthengine",
     image: "/projects/healthengine.png",
     category: "Health & Fitness",
