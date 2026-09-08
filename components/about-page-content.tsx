@@ -77,11 +77,11 @@ export default function AboutPageContent() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-16 relative overflow-hidden bg-background">
+      {/* Hero Section — editorial statement + fact ledger */}
+      <section ref={heroRef} className="pt-36 pb-24 relative overflow-hidden bg-background">
         {/* Decorative layers (pointer-events-none, behind z-10 content) */}
         <div className="grid-texture-dark absolute inset-0 pointer-events-none" aria-hidden />
-        <GlowOrb color={ACCENT} size={520} opacity={0.16} parallax={heroOrbY} className="-top-32 -left-24" />
+        <GlowOrb color={ACCENT} size={520} opacity={0.14} parallax={heroOrbY} className="-top-32 -left-24" />
         <AmbientShape
           variant="ring"
           color={ACCENT}
@@ -91,28 +91,102 @@ export default function AboutPageContent() {
           className="-top-20 -right-32"
         />
 
+        {/* ghost watermark — same vocabulary as the home hero's TECHNOVA */}
+        <motion.span
+          aria-hidden
+          style={reduceMotion ? undefined : { y: heroShapeY }}
+          className="text-stroke-accent pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-serif text-[20vw] leading-none font-bold text-transparent opacity-30"
+        >
+          ABOUT
+        </motion.span>
+
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <Reveal as="span" y={12} className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
-              About Us
-            </Reveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-normal mt-4 mb-6 text-foreground">
-              <RevealText
-                as="span"
-                by="word"
-                text="Building the"
-                className="inline"
-              />{" "}
-              <GradientText tone="light" animate className="italic">
-                Future
-              </GradientText>
-              <br />
-              <RevealText as="span" by="word" delay={0.18} text="of Technology" className="inline" />
-            </h1>
-            <Reveal as="p" y={16} delay={0.3} className="text-lg text-muted-foreground max-w-xl">
-              Technova Tech delivers advanced AI-powered SaaS products and enterprise-grade ERP systems designed for
-              modern businesses.
-            </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+            {/* ---------- statement ---------- */}
+            <div className="lg:col-span-8">
+              <Reveal y={12} className="flex items-center gap-4">
+                <span className="h-px w-10" style={{ backgroundColor: ACCENT }} aria-hidden />
+                <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                  About Us
+                </span>
+              </Reveal>
+
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal mt-6 mb-8 leading-[1.02] text-foreground">
+                <RevealText as="span" by="word" text="Building the" className="inline" />{" "}
+                <GradientText tone="light" animate className="italic">
+                  Future
+                </GradientText>
+                <br />
+                <RevealText as="span" by="word" delay={0.18} text="of Technology" className="inline" />
+                <motion.span
+                  aria-hidden
+                  className="ml-3 inline-block h-3 w-3 md:h-4 md:w-4 rounded-full align-baseline"
+                  style={{ backgroundColor: ACCENT }}
+                  initial={reduceMotion ? false : { scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 18, delay: 0.7 }}
+                />
+              </h1>
+
+              <AnimatedDivider className="text-foreground max-w-[8rem] mb-8" />
+
+              <Reveal as="p" y={16} delay={0.3} className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                Technova Tech delivers advanced AI-powered SaaS products and enterprise-grade
+                ERP systems designed for modern businesses — built in Gujarat, running in
+                production for clients across the world.
+              </Reveal>
+
+              <Reveal y={16} delay={0.45} className="mt-10 flex flex-wrap items-center gap-6">
+                <Link
+                  href="/founder"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                >
+                  <span className="border-b border-foreground/30 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                    Meet the founder
+                  </span>
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    style={{ color: ACCENT }}
+                  />
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                >
+                  <span className="border-b border-foreground/30 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
+                    See the work
+                  </span>
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    style={{ color: ACCENT }}
+                  />
+                </Link>
+              </Reveal>
+            </div>
+
+            {/* ---------- fact ledger ---------- */}
+            <Stagger className="lg:col-span-4 lg:pt-10">
+              {[
+                { label: "Founded", value: "2019" },
+                { label: "Head Office", value: "Rajkot · Gujarat" },
+                { label: "Team", value: "14+ specialists" },
+                { label: "Products", value: "2 platforms live" },
+              ].map((fact, i) => (
+                <StaggerItem key={fact.label}>
+                  <div className="flex items-baseline gap-5 border-t border-border py-5 last:border-b">
+                    <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground w-24 shrink-0">
+                      {fact.label}
+                    </span>
+                    <span className="ml-auto font-serif text-xl md:text-2xl text-foreground text-right">
+                      {fact.value}
+                    </span>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
           </div>
         </div>
       </section>
