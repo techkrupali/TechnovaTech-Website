@@ -40,13 +40,13 @@ const stats = [
     context: "Building and running software in production since 2019.",
   },
   {
-    value: 104,
+    value: 50,
     suffix: "+",
     label: "Projects Delivered",
     context: "Across retail, automotive, SaaS and enterprise operations.",
   },
   {
-    value: 100,
+    value: 98,
     suffix: "%",
     label: "Client Satisfaction",
     context: "Every engagement referenceable — ask us for an introduction.",
