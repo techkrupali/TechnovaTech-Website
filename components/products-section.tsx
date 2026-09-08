@@ -53,6 +53,7 @@ const products = [
       "A complete digital build for a Dallas\u2013Fort Worth roofing and restoration company — their website, their field-crew mobile app, and personalised software running inspections, jobs and insurance claims end to end.",
     tags: ["Booking Website", "Field Crew App", "Jobs & Claims Software", "Financing Integrations"],
     mock: "field" as const,
+    screenshot: "/products/millerstorm-os.png",
   },
 ]
 
