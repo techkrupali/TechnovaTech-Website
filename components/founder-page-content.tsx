@@ -334,8 +334,6 @@ export default function FounderPageContent() {
         </div>
       </section>
 
-      {/* Running Strip - Dark */}
-      <RunningStrip text="TECHNOVA TECH • KRUPALI VEKARIYA" reverse speed={20} dark />
 
       {/* Skills Cloud */}
       <section className="py-24 relative bg-background">
