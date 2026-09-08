@@ -628,12 +628,12 @@ export default function PortfolioPageContent() {
                         src={project.image}
                         alt=""
                         aria-hidden
-                        className="h-12 w-12 shrink-0 rounded-xl border border-border bg-white object-contain p-0.5"
+                        className="h-20 w-20 shrink-0 rounded-2xl border border-border bg-white object-contain p-1"
                       />
                     ) : (
                       <span
                         aria-hidden
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-serif text-lg text-white"
+                        className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl font-serif text-3xl text-white"
                         style={{ backgroundColor: "#0a0a0f" }}
                       >
                         <span style={{ color: ACCENT }}>{project.name.charAt(0)}</span>
