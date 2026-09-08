@@ -125,8 +125,8 @@ const projects: Project[] = [
     about:
       "Our flagship point-of-sale and inventory platform, run daily by thousands of retail businesses across India.",
     features: ["Fast billing & inventory", "GST-compliant reports", "Customer loyalty", "Offline mode"],
-    href: "https://retailians.com/",
-    cta: "Visit site",
+    href: "/contact",
+    cta: "Enquire now",
   },
   {
     name: "911 Wrap ERP",
