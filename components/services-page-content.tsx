@@ -8,7 +8,6 @@ import {
   Code2,
   Database,
   Smartphone,
-  Shield,
   Layers,
   Plug,
   Palette,
@@ -75,12 +74,6 @@ const services = [
     title: "Cloud & DevOps",
     description: "Infrastructure automation, CI/CD pipelines, and cloud deployment solutions.",
     features: ["AWS/GCP/Azure", "Docker/Kubernetes", "CI/CD Pipelines", "Infrastructure as Code"],
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Advanced security solutions, audits, and compliance implementations.",
-    features: ["Security Audits", "Penetration Testing", "Compliance (SOC2, GDPR)", "Zero-Trust Architecture"],
   },
   {
     icon: Layers,
