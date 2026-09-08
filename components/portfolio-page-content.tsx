@@ -311,6 +311,23 @@ const projects: Project[] = [
     cta: "Google Play",
   },
   {
+    name: "Yatri — Ride Booking",
+    image: "/projects/yatri.jpg",
+    category: "Travel",
+    about:
+      "India's open mobility ride-booking app \u2014 zero commission, so riders pay a fair price and drivers keep what they earn. Book, track and pay, all in one tap.",
+    features: [
+      "One-tap ride booking",
+      "Zero-commission fair pricing",
+      "Live ride tracking",
+      "Direct payment to drivers",
+      "Driver ratings & safety tools",
+      "Community-driven open platform",
+    ],
+    href: "https://apps.apple.com/in/app/yatri-ride-booking-app/id1615871038",
+    cta: "App Store",
+  },
+  {
     name: "CSL Dating",
     image: "/projects/csl-dating.png",
     category: "Social",
@@ -355,6 +372,7 @@ const projectCategories = [
   "Health & Fitness",
   "Productivity",
   "Kids Games",
+  "Travel",
   "Social",
   "AI Tools",
 ]
