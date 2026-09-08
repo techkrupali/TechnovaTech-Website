@@ -27,21 +27,30 @@ import {
 const products = [
   {
     number: "01",
-    category: "Retail SaaS · Point of Sale",
-    title: "Retailians POS",
-    description:
-      "A complete point-of-sale and inventory platform for Indian retail — billing, stock, GST reports and customer loyalty in one clean screen. Thousands of store owners across India run their entire day on it.",
-    tags: ["Billing & Invoicing", "Inventory & Stock", "GST Reports", "Customer Loyalty"],
-    mock: "pos" as const,
-  },
-  {
-    number: "02",
     category: "Enterprise ERP · Automotive",
     title: "911 Wrap ERP",
     description:
       "An end-to-end ERP for automobile dealerships and custom wrap studios — every vehicle tracked from first enquiry to final invoice, with order management, job scheduling and profit analytics built in.",
     tags: ["Order Management", "Job Scheduling", "Inventory Control", "Profit Analytics"],
     mock: "erp" as const,
+  },
+  {
+    number: "02",
+    category: "EdTech · Digital SAT Prep",
+    title: "DSAT Guru",
+    description:
+      "A smart Digital SAT preparation platform — adaptive practice that targets weak areas first, full-length mock tests, and score-trend analytics that show students exactly what is improving before test day.",
+    tags: ["Adaptive Practice", "Full-length Mocks", "Score Analytics", "Study Plans"],
+    mock: "edu" as const,
+  },
+  {
+    number: "03",
+    category: "Custom Build · Roofing & Restoration",
+    title: "Miller Storm",
+    description:
+      "A complete digital build for a Dallas\u2013Fort Worth roofing and restoration company — their website, their field-crew mobile app, and personalised software running inspections, jobs and insurance claims end to end.",
+    tags: ["Booking Website", "Field Crew App", "Jobs & Claims Software", "Financing Integrations"],
+    mock: "field" as const,
   },
 ]
 
@@ -61,44 +70,111 @@ function MockChrome({ children }: { children: React.ReactNode }) {
   )
 }
 
-function PosMock() {
-  const bars = [38, 62, 46, 78, 55, 92, 68]
+function EduMock() {
+  const options = [72, 58, 66, 50]
+  const trend = [30, 42, 38, 55, 62, 74, 88]
   return (
     <MockChrome>
-      <div className="grid grid-cols-5 gap-3">
-        {/* line items */}
-        <div className="col-span-3 space-y-2.5">
-          {[80, 65, 72, 55].map((w, i) => (
-            <div key={i} className="flex items-center gap-2 rounded-lg bg-white/[0.05] px-3 py-2.5">
-              <span className="h-1.5 rounded-full bg-white/25" style={{ width: `${w * 0.5}%` }} />
-              <span className="ml-auto h-1.5 w-7 rounded-full bg-white/15" />
-            </div>
-          ))}
-        </div>
-        {/* total + pay */}
-        <div className="col-span-2 flex flex-col rounded-lg bg-white/[0.05] p-3">
-          <span className="h-1.5 w-10 rounded-full bg-white/15" />
-          <span className="mt-2 h-3 w-16 rounded-full bg-white/30" />
-          <span
-            className="mt-auto flex h-8 items-center justify-center rounded-md font-mono text-[8px] font-bold uppercase tracking-[0.2em] text-white"
-            style={{ backgroundColor: ACCENT }}
-          >
-            Charge
-          </span>
-        </div>
+      {/* question card */}
+      <div className="rounded-lg bg-white/[0.05] p-3">
+        <span className="block h-1.5 w-16 rounded-full" style={{ backgroundColor: ACCENT }} />
+        <span className="mt-2.5 block h-2 w-4/5 rounded-full bg-white/25" />
+        <span className="mt-1.5 block h-2 w-3/5 rounded-full bg-white/15" />
       </div>
-      {/* week of sales */}
-      <div className="mt-4 flex h-16 items-end gap-2">
-        {bars.map((h, i) => (
+      {/* answer options — one selected in red */}
+      <div className="mt-3 space-y-2">
+        {options.map((w, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-2.5 rounded-lg border px-3 py-2"
+            style={{
+              borderColor: i === 1 ? ACCENT : "rgba(255,255,255,0.1)",
+              backgroundColor: i === 1 ? "rgba(239,11,10,0.12)" : "rgba(255,255,255,0.04)",
+            }}
+          >
+            <span
+              className="h-3 w-3 shrink-0 rounded-full border"
+              style={{
+                borderColor: i === 1 ? ACCENT : "rgba(255,255,255,0.25)",
+                backgroundColor: i === 1 ? ACCENT : "transparent",
+              }}
+            />
+            <span className="h-1.5 rounded-full bg-white/20" style={{ width: `${w}%` }} />
+          </div>
+        ))}
+      </div>
+      {/* score trend, rising */}
+      <div className="mt-4 flex h-14 items-end gap-2">
+        {trend.map((h, i) => (
           <div
             key={i}
             className="flex-1 rounded-t-sm"
             style={{
               height: `${h}%`,
-              backgroundColor: i === 5 ? ACCENT : "rgba(255,255,255,0.12)",
+              backgroundColor: i === trend.length - 1 ? ACCENT : "rgba(255,255,255,0.12)",
             }}
           />
         ))}
+      </div>
+    </MockChrome>
+  )
+}
+
+function FieldMock() {
+  const jobs = [
+    { w: 62, urgent: false },
+    { w: 48, urgent: true },
+    { w: 70, urgent: false },
+    { w: 55, urgent: false },
+  ]
+  return (
+    <MockChrome>
+      {/* KPI strip */}
+      <div className="mb-4 grid grid-cols-3 gap-3">
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="rounded-lg bg-white/[0.05] p-3">
+            <span className="block h-1.5 w-8 rounded-full bg-white/15" />
+            <span
+              className="mt-2 block h-2.5 w-12 rounded-full"
+              style={{ backgroundColor: i === 1 ? ACCENT : "rgba(255,255,255,0.3)" }}
+            />
+          </div>
+        ))}
+      </div>
+      {/* inspection jobs queue */}
+      <div className="space-y-2.5">
+        {jobs.map((job, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-3 rounded-lg border px-3 py-2.5"
+            style={{
+              borderColor: job.urgent ? ACCENT : "rgba(255,255,255,0.1)",
+              backgroundColor: job.urgent ? "rgba(239,11,10,0.12)" : "rgba(255,255,255,0.04)",
+            }}
+          >
+            <span
+              className="h-2 w-2 shrink-0 rounded-full"
+              style={{ backgroundColor: job.urgent ? ACCENT : "rgba(255,255,255,0.3)" }}
+            />
+            <span className="h-1.5 rounded-full bg-white/25" style={{ width: `${job.w * 0.6}%` }} />
+            <span className="ml-auto h-1.5 w-10 rounded-full bg-white/15" />
+            {job.urgent && (
+              <span
+                className="rounded px-1.5 py-0.5 font-mono text-[7px] font-bold uppercase tracking-[0.15em] text-white"
+                style={{ backgroundColor: ACCENT }}
+              >
+                Urgent
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+      {/* dispatch button */}
+      <div
+        className="mt-4 flex h-8 items-center justify-center rounded-md font-mono text-[8px] font-bold uppercase tracking-[0.2em] text-white"
+        style={{ backgroundColor: ACCENT }}
+      >
+        Dispatch Crew
       </div>
     </MockChrome>
   )
@@ -296,7 +372,7 @@ export default function ProductsSection() {
                         style={{ backgroundColor: ACCENT, opacity: 0.07 }}
                       />
                       <TiltCard max={6} className="relative">
-                        {product.mock === "pos" ? <PosMock /> : <ErpMock />}
+                        {product.mock === "erp" ? <ErpMock /> : product.mock === "edu" ? <EduMock /> : <FieldMock />}
                       </TiltCard>
                     </div>
                   </Reveal>
