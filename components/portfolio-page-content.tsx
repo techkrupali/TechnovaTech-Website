@@ -946,63 +946,55 @@ export default function PortfolioPageContent() {
 
       <RunningStrip text="TECHNOVA TECH • PROOF OF WORK" reverse speed={20} dark />
 
-      {/* ---------- the reserved line ---------- */}
-      <section id="next-entry" className="py-24 bg-background scroll-mt-24">
-        <div className="container mx-auto px-6">
-          <Reveal y={0} duration={DUR.slow}>
-            <motion.div
-              initial={reduce ? undefined : { scale: 0.97 }}
-              whileInView={reduce ? undefined : { scale: 1 }}
-              viewport={VIEWPORT}
-              transition={{ duration: DUR.slow, ease: EASE_OUT }}
-              className="relative overflow-hidden rounded-2xl border-2 border-dashed border-border p-10 md:p-16 text-center"
-            >
-              {/* giant reserved numeral parked behind */}
-              <StrokeNumeral
-                text={RESERVED_NUMERAL}
-                className="absolute -right-6 -bottom-10 text-[12rem] md:text-[18rem] opacity-[0.15] pointer-events-none"
-              />
-              {/* un-inked ghost stamp — waiting to be earned */}
-              <div className="absolute left-8 top-8 hidden lg:block opacity-30">
-                <RubberStamp label="" arcText="" ink="rgba(10,10,15,0.35)" ghost />
-              </div>
-              {/* corner postmark — the hang-tag's cancellation mark */}
-              <svg
-                aria-hidden
-                width={104}
-                height={60}
-                viewBox="0 0 104 60"
-                className="pointer-events-none absolute right-4 top-6 opacity-30 hidden md:block"
-                style={{ transform: "rotate(-7deg)" }}
-              >
-                <g stroke="rgba(10,10,15,0.5)" fill="none" strokeWidth={1}>
-                  <circle cx={76} cy={30} r={22} strokeDasharray="3 2.5" opacity={0.55} />
-                  <circle cx={76} cy={30} r={16.5} opacity={0.45} />
-                  <path d="M2 22 q 8 -4 16 0 t 16 0 t 16 0" opacity={0.4} />
-                  <path d="M2 30 q 8 -4 16 0 t 16 0 t 16 0" opacity={0.4} />
-                  <path d="M2 38 q 8 -4 16 0 t 16 0 t 16 0" opacity={0.4} />
-                </g>
-                <text x={76} y={28} textAnchor="middle" fontSize={6.5} letterSpacing={1} fill="rgba(10,10,15,0.6)" className="font-mono">
-                  EST.
-                </text>
-                <text x={76} y={37} textAnchor="middle" fontSize={7} letterSpacing={1} fill="rgba(10,10,15,0.6)" className="font-mono">
-                  2026
-                </text>
-              </svg>
+      {/* ---------- the open slot: dark editorial CTA ---------- */}
+      <section id="next-entry" className="py-28 dark-section relative overflow-hidden scroll-mt-24">
+        <div aria-hidden className="grid-texture absolute inset-0 pointer-events-none" />
+        <GlowOrb color={ACCENT} size={520} opacity={0.14} className="-bottom-40 -left-24" />
 
-              <div className="relative z-10 max-w-2xl mx-auto">
-                <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">
-                  N&ordm; VT-{RESERVED_NUMERAL} &mdash; this line reserved
-                </p>
-                <h2 className="font-serif text-4xl md:text-6xl text-foreground mb-6">
-                  The next entry could be{" "}
-                  <GradientText animate as="span" className="italic">
-                    yours.
-                  </GradientText>
-                </h2>
-                <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-10">
-                  This space is earned, not filled.
-                </p>
+        {/* ghost numeral of the next open slot */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -right-4 -bottom-20 select-none font-serif text-[16rem] md:text-[24rem] leading-none text-white/[0.04]"
+        >
+          {String(projects.length + 1).padStart(2, "0")}
+        </span>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+            {/* ---------- statement ---------- */}
+            <div className="lg:col-span-8">
+              <Reveal y={12} className="flex items-center gap-3">
+                <span
+                  className="h-1.5 w-1.5 rounded-full animate-pulse-glow"
+                  style={{ backgroundColor: ACCENT }}
+                />
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-white/50">
+                  Slot {String(projects.length + 1).padStart(2, "0")} — reserved for your project
+                </span>
+              </Reveal>
+
+              <Reveal as="h2" delay={0.08} className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-white">
+                The next entry could be{" "}
+                <GradientText tone="dark" animate as="span" className="italic">
+                  yours
+                </GradientText>
+                <motion.span
+                  aria-hidden
+                  className="ml-2 inline-block h-2.5 w-2.5 md:h-3.5 md:w-3.5 rounded-full align-baseline"
+                  style={{ backgroundColor: ACCENT }}
+                  initial={reduce ? false : { scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={VIEWPORT}
+                  transition={{ type: "spring", stiffness: 400, damping: 18, delay: 0.5 }}
+                />
+              </Reveal>
+
+              <Reveal as="p" y={16} delay={0.2} className="mt-6 max-w-xl text-lg leading-relaxed text-white/60">
+                This space is earned, not filled. Tell us what you're building — a product,
+                a platform, a storefront — and let's put your name on the next line of the index.
+              </Reveal>
+
+              <Reveal y={16} delay={0.35} className="mt-10">
                 <MagneticButton
                   as={Link}
                   href="/contact"
@@ -1012,9 +1004,33 @@ export default function PortfolioPageContent() {
                   <span className="relative z-10">Start Your Project</span>
                   <ArrowUpRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
                 </MagneticButton>
-              </div>
-            </motion.div>
-          </Reveal>
+              </Reveal>
+            </div>
+
+            {/* ---------- the open slot, as a ledger ---------- */}
+            <Stagger className="lg:col-span-4">
+              {[
+                { label: "Slot", value: String(projects.length + 1).padStart(2, "0") },
+                { label: "Status", value: "Open" },
+                { label: "First reply", value: "Within 24 hours" },
+                { label: "Kick-off", value: "Days, not months" },
+              ].map((fact, i) => (
+                <StaggerItem key={fact.label}>
+                  <div className="flex items-baseline gap-5 border-t border-white/10 py-5 last:border-b">
+                    <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: ACCENT }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 w-20 shrink-0">
+                      {fact.label}
+                    </span>
+                    <span className="ml-auto text-right font-serif text-xl md:text-2xl text-white">
+                      {fact.value}
+                    </span>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
     </>
