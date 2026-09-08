@@ -33,6 +33,7 @@ const products = [
       "An end-to-end ERP for automobile dealerships and custom wrap studios — every vehicle tracked from first enquiry to final invoice, with order management, job scheduling and profit analytics built in.",
     tags: ["Order Management", "Job Scheduling", "Inventory Control", "Profit Analytics"],
     mock: "erp" as const,
+    screenshot: "/products/911-dashboard.png",
   },
   {
     number: "02",
@@ -372,7 +373,19 @@ export default function ProductsSection() {
                         style={{ backgroundColor: ACCENT, opacity: 0.07 }}
                       />
                       <TiltCard max={6} className="relative">
-                        {product.mock === "erp" ? <ErpMock /> : product.mock === "edu" ? <EduMock /> : <FieldMock />}
+                        {"screenshot" in product && product.screenshot ? (
+                          <img
+                            src={product.screenshot}
+                            alt={`${product.title} dashboard`}
+                            className="w-full h-auto rounded-2xl border border-white/10 shadow-2xl shadow-black/40"
+                          />
+                        ) : product.mock === "erp" ? (
+                          <ErpMock />
+                        ) : product.mock === "edu" ? (
+                          <EduMock />
+                        ) : (
+                          <FieldMock />
+                        )}
                       </TiltCard>
                     </div>
                   </Reveal>
