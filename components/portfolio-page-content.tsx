@@ -114,6 +114,9 @@ type Project = {
   features: string[]
   href: string
   cta: string
+  /** optional second link (e.g. the client's app alongside their site) */
+  secondHref?: string
+  secondCta?: string
   /** square logo/icon in public/projects; cards fall back to an initials tile */
   image?: string
 }
@@ -221,6 +224,8 @@ const projects: Project[] = [
     ],
     href: "https://millerstorm.com/",
     cta: "Visit site",
+    secondHref: "https://play.google.com/store/apps/details?id=com.millerstorm.millerstorm_app",
+    secondCta: "Google Play",
   },
   {
     name: "Healthengine",
@@ -720,12 +725,7 @@ export default function PortfolioPageContent() {
                 transition={{ duration: 0.4, ease: EASE_OUT }}
                 className="bg-background"
               >
-                <a
-                  href={project.href}
-                  target={project.href.startsWith("http") ? "_blank" : undefined}
-                  rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group relative flex h-full flex-col overflow-hidden bg-background p-8 transition-colors duration-500 hover:bg-secondary/40"
-                >
+                <div className="group relative flex h-full flex-col overflow-hidden bg-background p-8 transition-colors duration-500 hover:bg-secondary/40">
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-xs tracking-[0.2em]" style={{ color: ACCENT }}>
                       {String(i + 1).padStart(2, "0")}
@@ -773,14 +773,29 @@ export default function PortfolioPageContent() {
                     ))}
                   </ul>
 
-                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                    <span className="border-b border-foreground/25 pb-0.5 transition-colors group-hover:border-[#ef0b0a]">
-                      {project.cta}
-                    </span>
-                    <ArrowUpRight
-                      className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      style={{ color: ACCENT }}
-                    />
+                  <span className="mt-auto pt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+                    {[
+                      { href: project.href, cta: project.cta },
+                      ...(project.secondHref && project.secondCta
+                        ? [{ href: project.secondHref, cta: project.secondCta }]
+                        : []),
+                    ].map((link) => (
+                      <a
+                        key={link.cta}
+                        href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="group/link inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                      >
+                        <span className="border-b border-foreground/25 pb-0.5 transition-colors group-hover/link:border-[#ef0b0a]">
+                          {link.cta}
+                        </span>
+                        <ArrowUpRight
+                          className="h-4 w-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+                          style={{ color: ACCENT }}
+                        />
+                      </a>
+                    ))}
                   </span>
 
                   {/* red sweep on hover */}
@@ -789,7 +804,7 @@ export default function PortfolioPageContent() {
                     className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"
                     style={{ backgroundColor: ACCENT }}
                   />
-                </a>
+                </div>
               </motion.div>
             ))}
           </div>
